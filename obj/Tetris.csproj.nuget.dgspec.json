@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\matte\\Documents\\Programmation\\B2\\Matières\\CSharp\\Tetris\\Tetris.csproj": {}
+    "C:\\Users\\winde\\Documents\\GitHub\\Tetris\\Tetris.csproj": {}
   },
   "projects": {
-    "C:\\Users\\matte\\Documents\\Programmation\\B2\\Matières\\CSharp\\Tetris\\Tetris.csproj": {
+    "C:\\Users\\winde\\Documents\\GitHub\\Tetris\\Tetris.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\matte\\Documents\\Programmation\\B2\\Matières\\CSharp\\Tetris\\Tetris.csproj",
+        "projectUniqueName": "C:\\Users\\winde\\Documents\\GitHub\\Tetris\\Tetris.csproj",
         "projectName": "Tetris",
-        "projectPath": "C:\\Users\\matte\\Documents\\Programmation\\B2\\Matières\\CSharp\\Tetris\\Tetris.csproj",
-        "packagesPath": "C:\\Users\\matte\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\matte\\Documents\\Programmation\\B2\\Matières\\CSharp\\Tetris\\obj\\",
+        "projectPath": "C:\\Users\\winde\\Documents\\GitHub\\Tetris\\Tetris.csproj",
+        "packagesPath": "C:\\Users\\winde\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\winde\\Documents\\GitHub\\Tetris\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\matte\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\winde\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

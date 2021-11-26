@@ -1,0 +1,21 @@
+@page "/game"
+
+@{
+    SourceCode.Menu.Play();
+}
+
+<div>
+    <table>
+        <tbody>
+            @foreach(var line in SourceCode.Game.grid.pieces) {
+                <tr>
+                    @foreach(var c in line) {
+                        <td>
+                            <span>@c</span>
+                        </td>
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

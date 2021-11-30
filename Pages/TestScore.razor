@@ -1,0 +1,54 @@
+@page "/testscore"
+
+<h3>Score</h3>
+
+@* <p> difficulty : @Score.selectedDifficulty[0] </p> *@
+<p> score : @Score.score </p>
+
+<button @onclick="difeasy">easy</button>
+<button @onclick="difnormal">normal</button>
+<button @onclick="difhard">hard</button>
+<button @onclick="difextreme">extreme</button>
+<button @onclick="difpurpl">purpl</button>
+
+<p> lines </p>
+<input placeholder="lines (int)" @bind="lines"/>
+<button @onclick="Dolines">do lines</button>
+
+<button @onclick="SoftDrop">soft drop</button>
+
+<p> debut / fin </p>
+<input placeholder="debut (int)" @bind="debut"/>
+<input placeholder="fin (int)" @bind="fin"/>
+<button @onclick="HardDrop">hard drop</button>
+
+
+@code {
+
+    private int score = 0;
+
+    public static void difeasy(){ Score.LaunchDifficulty(1); }
+    public static void difnormal(){ Score.LaunchDifficulty(2); }
+    public static void difhard(){ Score.LaunchDifficulty(3); }
+    public static void difextreme(){ Score.LaunchDifficulty(4); }
+    public static void difpurpl(){ Score.LaunchDifficulty(5); }
+
+    private static int lines = 1;
+
+    public static void Dolines(){ 
+        Score.LinesPoints(lines);
+    }
+
+    public static void SoftDrop(){ 
+        Score.SoftDrop();
+    }
+
+    private static int debut = 0;
+    private static int fin = 0;
+
+    public static void HardDrop(){ 
+        Score.HardDrop(debut, fin);
+    }
+
+
+}

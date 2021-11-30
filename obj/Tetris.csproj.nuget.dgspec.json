@@ -1,27 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\matte\\Documents\\Programmation\\B2\\Matières\\CSharp\\Tetris\\Tetris.csproj": {}
+    "C:\\Users\\lewis\\Documents\\GitHub\\Tetris\\Tetris.csproj": {}
   },
   "projects": {
-    "C:\\Users\\matte\\Documents\\Programmation\\B2\\Matières\\CSharp\\Tetris\\Tetris.csproj": {
+    "C:\\Users\\lewis\\Documents\\GitHub\\Tetris\\Tetris.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\matte\\Documents\\Programmation\\B2\\Matières\\CSharp\\Tetris\\Tetris.csproj",
+        "projectUniqueName": "C:\\Users\\lewis\\Documents\\GitHub\\Tetris\\Tetris.csproj",
         "projectName": "Tetris",
-        "projectPath": "C:\\Users\\matte\\Documents\\Programmation\\B2\\Matières\\CSharp\\Tetris\\Tetris.csproj",
-        "packagesPath": "C:\\Users\\matte\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\matte\\Documents\\Programmation\\B2\\Matières\\CSharp\\Tetris\\obj\\",
+        "projectPath": "C:\\Users\\lewis\\Documents\\GitHub\\Tetris\\Tetris.csproj",
+        "packagesPath": "C:\\Users\\lewis\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lewis\\Documents\\GitHub\\Tetris\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\matte\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\lewis\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

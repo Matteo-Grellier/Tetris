@@ -1,0 +1,42 @@
+@page "/game"
+
+@using System.Threading;
+
+@{
+    StartRoundDelay();
+}
+
+<div>
+    <table>
+        <tbody>
+            @foreach(var line in gridPrintable) {
+                <tr>
+                    @foreach(var c in line) {
+                        <td id="c-@c">
+                        </td>
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@code {
+
+    private static List<List<int>> gridPrintable = SourceCode.Game.grid.pieces;
+    
+    void StartRoundDelay()
+    {
+        var timer = new Timer(new TimerCallback(_ =>
+        {
+            gridPrintable = SourceCode.Game.grid.pieces;
+
+            InvokeAsync(() =>
+            {
+                StateHasChanged();
+            });
+
+
+        }), null, 1000, 1000);
+    }
+}

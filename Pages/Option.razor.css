@@ -1,0 +1,51 @@
+div {
+    position: absolute;
+    top: 200px;
+    font-size: 50px;
+}
+
+.dificultyOption {
+    font-size: 20px;
+    top: 300px;
+}
+
+.dificulties {
+    top: 350px;
+    width: 350px;
+    height: 150px;
+}
+
+.facile {
+    top: 20px;
+    font-size: 15px;
+    left: 20px;
+}
+
+.moyen {
+    left: 200px;
+    top: 20px;
+    font-size: 15px;
+}
+
+.extreme {
+    left: 20px;
+    top: 100px;
+    font-size: 15px;
+}
+
+.purple {
+    top: 100px;
+    left: 200px;
+    font-size: 15px;
+    color: purple;
+}
+
+.Game-Grid {
+    top: 500px;
+    font-size: 20px;
+}
+
+.WH {
+    top: 500px;
+    font-size: 15px;
+}

@@ -1,5 +1,5 @@
 namespace SourceCode;
-enum TypeOfPiece {
+public enum TypeOfPiece {
     EMPTY,
     I,
     O,

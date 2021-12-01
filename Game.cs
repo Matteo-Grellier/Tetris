@@ -19,7 +19,7 @@ class Game {
         score = 0;
     }
 
-    public static async Task LaunchGame() {
+    public static async Task Round() { //il faudra trouver une autre solution pour le Delay
 
         Console.WriteLine("I launch the game !");
 
@@ -28,27 +28,39 @@ class Game {
         while(!isEnd) {
             await Task.Delay(delay);
 
-            // Thread.Sleep(delay);
+            int offsetX = 0;
+            int offsetY = 1;
+            int offsetRotation = 0;
 
-            bool isMovable = grid.VerifyNewPosition(grid.actualPiece.x, grid.actualPiece.y+1, grid.actualPiece.rotation);
+            grid.RemovePiece(); //on enlève la pièce actuelle pour vérifier la nouvelle position (pour éviter les conflits).
+
+            bool isMovable = grid.VerifyNewPosition(offsetX, offsetY, offsetRotation);
 
             if(!isMovable) {
+                
+                grid.AddToGrid(0, 0, 0); //on ajoute la pièce actuel à sa dernière position (avant de mettre la prochaine pièce)
+
+
                 grid.actualPiece = grid.nextPiece;
                 grid.nextPiece = new Piece();
 
-                // grid.actualPiece = new Piece();
+                offsetY = 0;
+                offsetX = 0;
 
                 Console.WriteLine("Fin de la pièce, début de la nouvelle");
             } else {
-                grid.actualPiece.y += 1;
+                offsetY = 1;
+                offsetX = 0;
+
+
                 Console.WriteLine("nouvelle position pour la pièce !");
                 Console.WriteLine("size : " + grid.pieces.Count);
                 Console.WriteLine("x and y : " + grid.actualPiece.x + " " + grid.actualPiece.y);
             }
 
-
-            grid.AddToGrid();
+            grid.AddToGrid(offsetX, offsetY, offsetRotation); //on ajoute la pièce à sa nouvelle position.
 
         }
     }
+    
 }

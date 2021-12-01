@@ -6,7 +6,7 @@ class Menu {
 
         // Piece.InitShapes();
 
-        Game.LaunchGame();
+        Game.Round();
     }
 
     public static void Options() {

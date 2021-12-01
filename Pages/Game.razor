@@ -3,18 +3,7 @@
 @using System.Threading;
 
 @{
-    @* SourceCode.Menu.Play(); *@
-
-    @* LaunchGame(); *@
-
-    @* Ahah(); *@
-
-    @* while(true) {
-        Task.Delay(1000);
-        TestToPrint();
-    } *@
-
-    StartCountdown();
+    StartRoundDelay();
 }
 
 <div>
@@ -35,63 +24,18 @@
 @code {
 
     private static List<List<int>> gridPrintable = SourceCode.Game.grid.pieces;
-
-
-        public void TestToPrint() {
-
-
-            gridPrintable = SourceCode.Game.grid.pieces;
-        }
-
-
-    @* private static List<List<int>> gridPrintable = SourceCode.Game.grid.pieces;
-   public static async Task LaunchGame() {
-
-        Console.WriteLine("I launch the game !");
-
-        var delay = 1000;
-
-        while(true) {
-            await Task.Delay(delay);
-
-            // Thread.Sleep(delay);
-
-            bool isMovable = SourceCode.Game.grid.VerifyNewPosition(SourceCode.Game.grid.actualPiece.x, SourceCode.Game.grid.actualPiece.y+1, SourceCode.Game.grid.actualPiece.rotation);
-
-            if(!isMovable) {
-                SourceCode.Game.grid.actualPiece = SourceCode.Game.grid.nextPiece;
-                SourceCode.Game.grid.nextPiece = new SourceCode.Piece();
-
-                // grid.actualPiece = new Piece();
-
-                Console.WriteLine("Fin de la pièce, début de la nouvelle");
-            } else {
-                SourceCode.Game.grid.actualPiece.y += 1;
-                Console.WriteLine("nouvelle position pour la pièce !");
-                Console.WriteLine("size : " + SourceCode.Game.grid.pieces.Count);
-                Console.WriteLine("x and y : " + SourceCode.Game.grid.actualPiece.x + " " + SourceCode.Game.grid.actualPiece.y);
-            }
-
-
-            SourceCode.Game.grid.AddToGrid();
-
-            gridPrintable = SourceCode.Game.grid.pieces;
-
-        }
-    } *@
-
-
-    void StartCountdown()
+    
+    void StartRoundDelay()
     {
         var timer = new Timer(new TimerCallback(_ =>
         {
             gridPrintable = SourceCode.Game.grid.pieces;
 
             InvokeAsync(() =>
-                {
-
-                    StateHasChanged();
+            {
+                StateHasChanged();
             });
+
 
         }), null, 1000, 1000);
     }

@@ -1,0 +1,21 @@
+table {
+    background-color: rgb(43, 43, 43);
+}
+
+td {
+    height: 20px;
+    width: 20px;
+    border: 1px solid #000;
+}
+
+td#c-1 {
+    background-color: #d85420; 
+}
+
+td#c-2 {
+    background-color: #d85420; 
+}
+
+td#c-3 {
+    background-color: #d85420; 
+}

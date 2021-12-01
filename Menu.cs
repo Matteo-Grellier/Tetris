@@ -4,9 +4,9 @@ class Menu {
     public static void Play() {
         Game.Init();
 
-        Piece.InitShapes();
+        // Piece.InitShapes();
 
-        Game.LaunchGame();
+        Game.Round();
     }
 
     public static void Options() {

@@ -1,9 +1,11 @@
+using System;
+
 namespace SourceCode;
 class Piece {
     public static List<List<List<List<int>>>> shapes = new List<List<List<List<int>>>>(); //[type of figure][rotationVal][pour parcourir les cases (pour trouver leur x et y)][x ou y]
     public int x;
     public int y;
-    public int rotate;
+    public int rotation;
     public TypeOfPiece type; //changer la valeur dans le constructeur (aléatoire)
     public List<List<List<int>>> shapeOfPiece; //changer la valeur dans le constructeur (aléatoire)
 
@@ -24,8 +26,22 @@ class Piece {
     public Piece() {
         this.x = 2;
         this.y = 2;
-        this.rotate = 0;
+        this.rotation = 0;
 
-        this.type = TypeOfPiece.I; //il faudra changer (système d'aléatoire)
+        this.type = RandomTypeOfPiece(); //il faudra changer (système d'aléatoire)
+
+        Console.WriteLine("type : " + (int)this.type);
+
+        this.shapeOfPiece = shapes[(int)this.type-1];
     }
+
+    public TypeOfPiece RandomTypeOfPiece() {
+        Random rnd = new Random();
+        int number  = rnd.Next(0, shapes.Count);
+
+        Console.WriteLine("shapes : " + shapes.Count);
+
+        return (TypeOfPiece)number+1;
+    }
+
 }

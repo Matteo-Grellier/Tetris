@@ -1,0 +1,42 @@
+@page "/option"
+@* @using Microsoft.Extensions.Logging
+@inject ILogger<Option> Logger *@
+
+<div>
+    Options
+</div>
+<div class="dificultyOption">
+    Dificulties :
+</div>
+<div class="dificulties">
+    <div class="facile">- Facile</div>
+    <div class="moyen">- Moyen</div>
+    <div class="extreme">- Extrème</div>
+    <div class="purple">- Purple</div>
+</div>
+
+<div class="Game-Grid">
+    Game Grid
+</div>
+<div class="WH">
+    @* <EditForm Model="@exampleModel" OnValidSubmit="@HandleValidSubmit">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+
+        <InputText id="name" @bind-Value="exampleModel.Name" />
+
+        <button type="submit">Submit</button>
+    </EditForm> *@
+</div>
+
+
+@code {
+    @* private Grid exampleModel = new();
+
+    private void HandleValidSubmit()
+    {
+        Logger.LogInformation("HandleValidSubmit called");
+
+        // Process the valid form
+    } *@
+}

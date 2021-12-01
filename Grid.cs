@@ -1,24 +1,31 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace SourceCode;
-class Grid {
-
+public class Grid {
     public List<List<int>> pieces = new List<List<int>>();
-
+    [Required]
     public int width;
     public int height;
 
     public Piece actualPiece;
     public Piece nextPiece;
-
+    
     public Grid() {
         this.actualPiece = new Piece();
         this.nextPiece = new Piece();
         this.width = 10;
         this.height = 20;
 
+
         InitGrid();
+
+        
+        
+    }
+    public Grid(int width,int height) {
+
     }
 
     private void InitGrid() {

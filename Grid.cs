@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace SourceCode;
-class Grid {
-
+public class Grid {
     public List<List<int>> pieces = new List<List<int>>();
 
     public int width;
@@ -12,13 +12,16 @@ class Grid {
     public Piece actualPiece;
     public Piece nextPiece;
 
-    public Grid() {
+ 
+    
+    public Grid(int width, int height) {
         this.actualPiece = new Piece();
         this.nextPiece = new Piece();
-        this.width = 10;
-        this.height = 20;
+        this.width = width;
+        this.height = height;
 
-        InitGrid();
+
+        InitGrid(); 
     }
 
     private void InitGrid() {
@@ -33,7 +36,6 @@ class Grid {
             pieces.Add(column);
         }
     }
-
     public void AddToGrid(int offsetX, int offsetY, int offsetRotation) {
 
  

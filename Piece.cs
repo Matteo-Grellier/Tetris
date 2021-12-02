@@ -1,7 +1,7 @@
 using System;
 
 namespace SourceCode;
-class Piece {
+public class Piece {
     public static List<List<List<List<int>>>> shapes = new List<List<List<List<int>>>>(); //[type of figure][rotationVal][pour parcourir les cases (pour trouver leur x et y)][x ou y]
     public int x;
     public int y;

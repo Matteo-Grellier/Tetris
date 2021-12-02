@@ -44,4 +44,18 @@ class Piece {
         return (TypeOfPiece)number+1;
     }
 
+    public void ToSide(int dirX) {
+        Console.WriteLine(dirX);
+
+        Game.grid.RemovePiece(); //on enlève la pièce actuelle pour vérifier la nouvelle position (pour éviter les conflits).
+
+        bool isMovable = Game.grid.VerifyNewPosition(dirX, 0, 0);
+
+        if(!isMovable) {
+            Game.grid.AddToGrid(0, 0, 0);
+        } else {
+            Game.grid.AddToGrid(dirX, 0, 0);
+        }
+    }
+
 }

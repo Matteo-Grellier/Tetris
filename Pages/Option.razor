@@ -1,42 +1,76 @@
 @page "/option"
-@* @using Microsoft.Extensions.Logging
-@inject ILogger<Option> Logger *@
+@namespace SourceCode
+@using Microsoft.Extensions.Logging
+@inject NavigationManager NavigationManager
+@inject ILogger<Option> Logger
+    
 
-<div>
-    Options
-</div>
-<div class="dificultyOption">
-    Dificulties :
-</div>
-<div class="dificulties">
-    <div class="facile">- Facile</div>
-    <div class="moyen">- Moyen</div>
-    <div class="extreme">- Extrème</div>
-    <div class="purple">- Purple</div>
-</div>
+<div class="optionPage">
+    <div class="back">
+        <button class="backButon" @onclick="NavigateToHome">Back</button>
+    </div>
+    <div>
+        Options
+    </div>
+    <div class="dificultyOption">
+        Dificulties :
+    </div>
+    <div class="dificulties">
+        <button class="facile">- Facile</button>
+        <div class="moyenDiv">
+        <button class="moyen">- Moyen</button>
+        </div>
+        <div class="extremeDiv">
+        <button class="extreme">- Extrème</button>
+        </div>
+        <div class="purpleDiv">
+        <button class="purple">- Purple</button>
+        </div>
+    </div>
 
-<div class="Game-Grid">
-    Game Grid
+    <div class="Game-Grid">
+        Game Grid :
+    </div>
+
+    <div class="WH">
+        <EditForm Model="@grid" OnValidSubmit="@HandleValidSubmit">
+            <DataAnnotationsValidator />
+            <ValidationSummary />
+            
+            <div class="widthInput">
+            <label class="fname">Width</label>
+            <input type="range"
+                min="0"
+                max="30"
+                step="1"
+                @bind-value="Game.width"
+                @bind-value:event="oninput"/>
+            </div>
+            <div class="heightInput">
+            <label class="fname">Height</label>
+            <input type="range"
+                min="0"
+                max="30"
+                step="1"
+                @bind-value="Game.height"
+                @bind-value:event="oninput"/>
+            </div>
+            <div class="submitButton">
+            </div>
+            <div class="showLength">@Game.width</div>
+            <div class="showHeight">@Game.height</div>
+        </EditForm>
+    </div>
 </div>
-<div class="WH">
-    @* <EditForm Model="@exampleModel" OnValidSubmit="@HandleValidSubmit">
-        <DataAnnotationsValidator />
-        <ValidationSummary />
-
-        <InputText id="name" @bind-Value="exampleModel.Name" />
-
-        <button type="submit">Submit</button>
-    </EditForm> *@
-</div>
-
 
 @code {
-    @* private Grid exampleModel = new();
+    private Game grid = new();
+
+    private void NavigateToHome() { NavigationManager.NavigateTo("/"); } 
 
     private void HandleValidSubmit()
     {
         Logger.LogInformation("HandleValidSubmit called");
-
         // Process the valid form
-    } *@
+    }
 }

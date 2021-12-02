@@ -1,14 +1,26 @@
+using System.ComponentModel.DataAnnotations;
 namespace SourceCode;
-class Game {
+
+public class Game {
+    
+    [Range(1, 30, ErrorMessage = "WTF BRO, POURQUOI AUTANT.")]
+    public static int width { get; set;}
+    [Range(1, 30, ErrorMessage = "WTF BRO, POURQUOI AUTANT.")]
+    public static int height { get; set;}
 
     public static Grid grid;
-
+    
     public static int score;
+
+    
 
     public static void Init() {
         Console.WriteLine("Initialisation...");
 
-        grid = new Grid();
+        Console.WriteLine(width);
+        grid = new Grid(width,height);
+
+        
 
         score = 0;
     }
@@ -16,4 +28,5 @@ class Game {
     public static void LaunchGame() {
         
     }
+    
 }

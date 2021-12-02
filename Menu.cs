@@ -1,6 +1,8 @@
 namespace SourceCode;
 
 class Menu {
+
+    
     public static void Play() {
         Game.Init();
 

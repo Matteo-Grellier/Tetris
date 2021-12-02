@@ -5,27 +5,23 @@ using System.ComponentModel.DataAnnotations;
 namespace SourceCode;
 public class Grid {
     public List<List<int>> pieces = new List<List<int>>();
-    [Required]
+
     public int width;
     public int height;
 
     public Piece actualPiece;
     public Piece nextPiece;
+
+ 
     
-    public Grid() {
+    public Grid(int width, int height) {
         this.actualPiece = new Piece();
         this.nextPiece = new Piece();
-        this.width = 10;
-        this.height = 20;
+        this.width = width;
+        this.height = height;
 
 
-        InitGrid();
-
-        
-        
-    }
-    public Grid(int width,int height) {
-
+        InitGrid(); 
     }
 
     private void InitGrid() {

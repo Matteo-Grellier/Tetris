@@ -64,12 +64,12 @@ class Grid {
             int xBox = actualPiece.x+offsetX+actualPiece.shapeOfPiece[actualPiece.rotation+offsetRotation][k][0];  //[type of figure][rotationVal][pour parcourir les cases (pour trouver leur x et y)][x ou y]
             int yBox = actualPiece.y+offsetY+actualPiece.shapeOfPiece[actualPiece.rotation+offsetRotation][k][1];
 
-            if(xBox < 0 || yBox < 0 || xBox >= width || yBox >= height) {
+            if(xBox < 0 || yBox < 0 || xBox >= width || yBox >= height) { //vérifier si on ne fait pas de outOfRange
                 return false;
 
-            } else if((pieces[yBox][xBox] != 0)) { //vérifier si on ne fait pas de outOfRange
-
+            } else if((pieces[yBox][xBox] != 0)) { 
                 return false;
+                
             }
         }
 

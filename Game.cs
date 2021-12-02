@@ -4,8 +4,9 @@ namespace SourceCode;
 class Game {
 
     public static Grid grid;
+    public static Score score;
 
-    public static int score;
+    // public static int score;
 
     public static bool isEnd = false;
 
@@ -13,10 +14,12 @@ class Game {
         Console.WriteLine("Initialisation...");
 
         Piece.InitShapes(); //il faudra absolument réinitialisé le tableau (car quand on recharge la page, cette méthode est appelé)
+        
 
         grid = new Grid();
+        score = new Score(1);
 
-        score = 0;
+        // Score.score = 0;
     }
 
     public static async Task Round() { //il faudra trouver une autre solution pour le Delay

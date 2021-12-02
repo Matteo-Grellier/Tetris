@@ -45,7 +45,6 @@ C:\Users\lewis\Documents\GitHub\Tetris\obj\Debug\net6.0\Tetris.RazorAssemblyInfo
 C:\Users\lewis\Documents\GitHub\Tetris\obj\Debug\net6.0\staticwebassets.build.json
 C:\Users\lewis\Documents\GitHub\Tetris\obj\Debug\net6.0\staticwebassets.development.json
 C:\Users\lewis\Documents\GitHub\Tetris\obj\Debug\net6.0\scopedcss\Shared\MainLayout.razor.rz.scp.css
-C:\Users\lewis\Documents\GitHub\Tetris\obj\Debug\net6.0\scopedcss\Shared\NavMenu.razor.rz.scp.css
 C:\Users\lewis\Documents\GitHub\Tetris\obj\Debug\net6.0\scopedcss\bundle\Tetris.styles.css
 C:\Users\lewis\Documents\GitHub\Tetris\obj\Debug\net6.0\scopedcss\projectbundle\Tetris.bundle.scp.css
 C:\Users\lewis\Documents\GitHub\Tetris\obj\Debug\net6.0\Tetris.dll

@@ -21,6 +21,11 @@
     </table>
 </div>
 
+<button class="btn-turn" @onclick="() => SourceCode.Game.grid.actualPiece.TurnPiece()">
+    <img class="btn-turn" src="images/button-turn-clockwise-bigger.png">
+</button>
+
+
 @code {
 
     private static List<List<int>> gridPrintable = SourceCode.Game.grid.pieces;

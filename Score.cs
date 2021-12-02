@@ -1,5 +1,5 @@
 // ! not static !
-public static class Score{
+public class Score{
 
     private static int[] difficultyEasy = {1, 100,300,500,1000};
     private static int[] difficultyNormal = {2, 250,750,1250,2500};
@@ -7,11 +7,22 @@ public static class Score{
     private static int[] difficultyExtreme = {6, 1000,3000,5000,10000};
     private static int[] difficultyPurpl = {2, 250,750,1250,2500};
 
-//en private !
-    public static int[] selectedDifficulty;
+    //en private !
+    private static int[] selectedDifficulty;
 
     //player score
-    public static int score = 0;
+    public static int score;
+
+    public Score(int difficulty){
+
+        // int[] selectedDifficulty;
+
+        score = 0;
+
+        LaunchDifficulty(difficulty);
+
+    }
+
 
     //at the beginning of the game, set the difficulty
     public static void LaunchDifficulty(int difficulty){
@@ -31,6 +42,9 @@ public static class Score{
                 break;
             case 5:
                 selectedDifficulty = difficultyPurpl;
+                break;
+            default:
+                selectedDifficulty = difficultyEasy;
                 break;
         }
     }

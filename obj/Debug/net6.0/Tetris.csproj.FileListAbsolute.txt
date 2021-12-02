@@ -51,3 +51,5 @@ C:\Users\lewis\Documents\GitHub\Tetris\obj\Debug\net6.0\Tetris.dll
 C:\Users\lewis\Documents\GitHub\Tetris\obj\Debug\net6.0\ref\Tetris.dll
 C:\Users\lewis\Documents\GitHub\Tetris\obj\Debug\net6.0\Tetris.pdb
 C:\Users\lewis\Documents\GitHub\Tetris\obj\Debug\net6.0\Tetris.genruntimeconfig.cache
+C:\Users\lewis\Documents\GitHub\Tetris\obj\Debug\net6.0\scopedcss\Pages\Game.razor.rz.scp.css
+C:\Users\lewis\Documents\GitHub\Tetris\obj\Debug\net6.0\scopedcss\Pages\Option.razor.rz.scp.css

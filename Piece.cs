@@ -58,11 +58,10 @@ public class Piece {
 
         //T 7
         shapes.Add(new List<List<List<int>>>() {
-            new List<List<int>>(){new List<int>(){0,0}, new List<int>(){1,0}, new List<int>(){-1,0},  new List<int>(){0,1}},
-            new List<List<int>>(){new List<int>(){0,0}, new List<int>(){1,0}, new List<int>(){0,1},  new List<int>(){0,-1}},
             new List<List<int>>(){new List<int>(){0,0}, new List<int>(){1,0}, new List<int>(){-1,0},  new List<int>(){0,-1}},
+            new List<List<int>>(){new List<int>(){0,0}, new List<int>(){1,0}, new List<int>(){0,1},  new List<int>(){0,-1}},
+            new List<List<int>>(){new List<int>(){0,0}, new List<int>(){1,0}, new List<int>(){-1,0},  new List<int>(){0,1}},
             new List<List<int>>(){new List<int>(){0,0}, new List<int>(){-1,0}, new List<int>(){0,1},  new List<int>(){0,-1}},
-
             
         });
 
@@ -86,10 +85,6 @@ public class Piece {
         int number  = rnd.Next(0, shapes.Count);
 
 
-        Console.WriteLine("==========================");
-        Console.WriteLine("shapes : " + shapes.Count);
-
-
         return (TypeOfPiece)number+1;
     }
     public void TurnPiece(){
@@ -106,18 +101,13 @@ public class Piece {
             }
 
         } else if (shapeOfPiece.Count == 2) {
-            Console.WriteLine("***********************************************************************");
-            Console.WriteLine("buenos dos");
 
             if (this.rotation == 1 ) {
                 offsetRotation = -1;
-                Console.WriteLine("this.rotation = " + this.rotation);
-                Console.WriteLine("offsetRotation = " + offsetRotation);
 
 
             } else {
                 offsetRotation = 1;
-                Console.WriteLine("ma quéééééééééééééé ?????????????????????");
             }
 
         } else {

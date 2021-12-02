@@ -12,7 +12,7 @@ public class Game {
 
     public static Grid grid;
     
-    public static int score;
+    public static Score score;
     public static int delay;
 
     public static bool isEnd = false;

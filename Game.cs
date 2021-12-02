@@ -1,22 +1,29 @@
 using System.Threading;
+using System.ComponentModel.DataAnnotations;
 
 namespace SourceCode;
-class Game {
+
+public class Game {
+    
+    [Range(1, 30, ErrorMessage = "WTF BRO, POURQUOI AUTANT.")]
+    public static int width { get; set;}
+    [Range(1, 30, ErrorMessage = "WTF BRO, POURQUOI AUTANT.")]
+    public static int height { get; set;}
 
     public static Grid grid;
-
+    
     public static int score;
-
     public static int delay;
 
     public static bool isEnd = false;
+
 
     public static void Init() {
         Console.WriteLine("Initialisation...");
 
         Piece.InitShapes(); //il faudra absolument réinitialisé le tableau (car quand on recharge la page, cette méthode est appelé)
 
-        grid = new Grid();
+        grid = new Grid(width, height);
 
         delay = 1000;
 

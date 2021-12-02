@@ -11,7 +11,7 @@
 
 
 <div class="menu">
-        <button @onclick="NavigateToGame">Play</button>
+        <button  @onclick="() => {SourceCode.Menu.Play(); NavigateToGame();}">Play</button>
         <button @onclick="NavigateToOptions">Options</button>
         <button @onclick="NavigateToCredits">Credits</button>
         <button @onclick="() => SourceCode.Menu.Quit()">Quit</button>

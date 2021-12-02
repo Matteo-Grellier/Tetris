@@ -7,6 +7,8 @@ class Game {
 
     public static int score;
 
+    public static int delay;
+
     public static bool isEnd = false;
 
     public static void Init() {
@@ -16,6 +18,8 @@ class Game {
 
         grid = new Grid();
 
+        delay = 1000;
+
         score = 0;
     }
 
@@ -23,7 +27,7 @@ class Game {
 
         Console.WriteLine("I launch the game !");
 
-        var delay = 1000;
+        // var delay = 1000;
 
         while(!isEnd) {
             await Task.Delay(delay);
@@ -37,6 +41,8 @@ class Game {
             bool isMovable = grid.VerifyNewPosition(offsetX, offsetY, offsetRotation);
 
             if(!isMovable) {
+
+                Game.delay = 1000;
                 
                 grid.AddToGrid(0, 0, 0); //on ajoute la pièce actuel à sa dernière position (avant de mettre la prochaine pièce)
 

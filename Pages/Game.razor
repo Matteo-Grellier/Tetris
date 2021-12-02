@@ -19,6 +19,12 @@
             }
         </tbody>
     </table>
+    <button class="btn-dir to-left" @onclick="() => SourceCode.Game.grid.actualPiece.ToSide(-1)">
+        <img src="images/button-left-bigger.png">
+    </button>
+    <button class="btn-dir to-right" @onclick="() => SourceCode.Game.grid.actualPiece.ToSide(1)">
+        <img src="images/button-right-bigger.png">
+    </button>
 </div>
 
 @code {

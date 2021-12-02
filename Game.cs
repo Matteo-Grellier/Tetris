@@ -12,7 +12,7 @@ public class Game {
 
     public static Grid grid;
     
-    public static int score;
+    public static Score score;
     public static int delay;
 
     public static bool isEnd = false;
@@ -22,12 +22,17 @@ public class Game {
         Console.WriteLine("Initialisation...");
 
         Piece.InitShapes(); //il faudra absolument réinitialisé le tableau (car quand on recharge la page, cette méthode est appelé)
+        
+
+
+        score = new Score(1);
 
         grid = new Grid(width, height);
 
         delay = 1000;
 
-        score = 0;
+
+        // Score.score = 0;
     }
 
     public static async Task Round() { //il faudra trouver une autre solution pour le Delay

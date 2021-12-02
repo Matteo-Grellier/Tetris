@@ -5,15 +5,19 @@
 @* <h1>TETRIS</h1>
 <h2>Purpl' version</h2> *@
 
+@inject NavigationManager NavigationManager
+
 <img src="images/tetris-v-purpl-crop.png" style="height: 200px">
 
-<div>
-    <nav>
-        <button @onclick="() => SourceCode.Menu.Play()"><a href="/game">Play</a></button>
-        <button @onclick="() => SourceCode.Menu.Options()">Options</button>
-        <button @onclick="() => SourceCode.Menu.Credits()">Credits</button>
+
+<div class="menu">
+        <button  @onclick="() => {SourceCode.Menu.Play(); NavigateToGame();}">Play</button>
+        <button @onclick="NavigateToOptions">Options</button>
+        <button @onclick="NavigateToCredits">Credits</button>
         <button @onclick="() => SourceCode.Menu.Quit()">Quit</button>
-    </nav>
 </div>
-
-
+@code { 
+    private void NavigateToGame() { NavigationManager.NavigateTo("/game"); } 
+    private void NavigateToOptions() { NavigationManager.NavigateTo("/option"); } 
+    private void NavigateToCredits() { NavigationManager.NavigateTo("/credits"); } 
+}

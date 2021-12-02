@@ -1,14 +1,22 @@
 using System.Threading;
+using System.ComponentModel.DataAnnotations;
 
 namespace SourceCode;
-class Game {
+
+public class Game {
+    
+    [Range(1, 30, ErrorMessage = "WTF BRO, POURQUOI AUTANT.")]
+    public static int width { get; set;}
+    [Range(1, 30, ErrorMessage = "WTF BRO, POURQUOI AUTANT.")]
+    public static int height { get; set;}
 
     public static Grid grid;
-    public static Score score;
-
-    // public static int score;
+    
+    public static int score;
+    public static int delay;
 
     public static bool isEnd = false;
+
 
     public static void Init() {
         Console.WriteLine("Initialisation...");
@@ -16,8 +24,13 @@ class Game {
         Piece.InitShapes(); //il faudra absolument réinitialisé le tableau (car quand on recharge la page, cette méthode est appelé)
         
 
-        grid = new Grid();
+
         score = new Score(1);
+
+        grid = new Grid(width, height);
+
+        delay = 1000;
+
 
         // Score.score = 0;
     }
@@ -26,7 +39,7 @@ class Game {
 
         Console.WriteLine("I launch the game !");
 
-        var delay = 1000;
+        // var delay = 1000;
 
         while(!isEnd) {
             await Task.Delay(delay);
@@ -40,6 +53,8 @@ class Game {
             bool isMovable = grid.VerifyNewPosition(offsetX, offsetY, offsetRotation);
 
             if(!isMovable) {
+
+                Game.delay = 1000;
                 
                 grid.AddToGrid(0, 0, 0); //on ajoute la pièce actuel à sa dernière position (avant de mettre la prochaine pièce)
 

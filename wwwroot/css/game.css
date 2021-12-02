@@ -44,9 +44,21 @@ td#c-1 {
 }
 
 td#c-2 {
-    background-color: #d85420; 
+    background-color: #73ff00; 
 }
 
 td#c-3 {
-    background-color: #d85420; 
+    background-color: #00a2ff; 
+}
+
+.btn-dir {
+    height: 70px;
+    width: 70px;
+    background: none;
+    border: none;
+}
+
+.btn-dir img {
+    height: 70px;
+    width: 70px;
 }

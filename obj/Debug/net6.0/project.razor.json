@@ -1,5 +1,5 @@
 {
-  "FilePath": "c:\\Users\\lewis\\Documents\\GitHub\\Tetris\\Tetris.csproj",
+  "FilePath": "c:\\Users\\matte\\Documents\\Programmation\\B2\\Matières\\CSharp\\Tetris\\Tetris.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "6.0",
@@ -11,6 +11,39 @@
   },
   "ProjectWorkspaceState": {
     "TagHelpers": [
+      {
+        "HashCode": -1678260571,
+        "Kind": "Components.Component",
+        "Name": "SourceCode.Option",
+        "AssemblyName": "Tetris",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Option"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "SourceCode.Option"
+        }
+      },
+      {
+        "HashCode": -1501825732,
+        "Kind": "Components.Component",
+        "Name": "SourceCode.Option",
+        "AssemblyName": "Tetris",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "SourceCode.Option"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "SourceCode.Option",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
       {
         "HashCode": -1153309791,
         "Kind": "Components.Component",
@@ -16526,48 +16559,53 @@
   "RootNamespace": "Tetris",
   "Documents": [
     {
-      "FilePath": "c:\\Users\\lewis\\Documents\\GitHub\\Tetris\\Pages\\Error.cshtml",
+      "FilePath": "c:\\Users\\matte\\Documents\\Programmation\\B2\\Matières\\CSharp\\Tetris\\Pages\\Error.cshtml",
       "TargetPath": "Pages\\Error.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\lewis\\Documents\\GitHub\\Tetris\\Pages\\Game.razor",
-      "TargetPath": "Pages\\Game.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\lewis\\Documents\\GitHub\\Tetris\\App.razor",
-      "TargetPath": "App.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\lewis\\Documents\\GitHub\\Tetris\\Pages\\_Layout.cshtml",
-      "TargetPath": "Pages\\_Layout.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\lewis\\Documents\\GitHub\\Tetris\\Pages\\Index.razor",
-      "TargetPath": "Pages\\Index.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\lewis\\Documents\\GitHub\\Tetris\\Shared\\MainLayout.razor",
+      "FilePath": "c:\\Users\\matte\\Documents\\Programmation\\B2\\Matières\\CSharp\\Tetris\\Shared\\MainLayout.razor",
       "TargetPath": "Shared\\MainLayout.razor",
       "FileKind": "component"
     },
     {
-      "FilePath": "c:\\Users\\lewis\\Documents\\GitHub\\Tetris\\Pages\\_Host.cshtml",
+      "FilePath": "c:\\Users\\matte\\Documents\\Programmation\\B2\\Matières\\CSharp\\Tetris\\Pages\\_Layout.cshtml",
+      "TargetPath": "Pages\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\matte\\Documents\\Programmation\\B2\\Matières\\CSharp\\Tetris\\Pages\\Index.razor",
+      "TargetPath": "Pages\\Index.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\matte\\Documents\\Programmation\\B2\\Matières\\CSharp\\Tetris\\Pages\\Game.razor",
+      "TargetPath": "Pages\\Game.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\matte\\Documents\\Programmation\\B2\\Matières\\CSharp\\Tetris\\Pages\\TestScore.razor",
+      "TargetPath": "Pages\\TestScore.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\matte\\Documents\\Programmation\\B2\\Matières\\CSharp\\Tetris\\App.razor",
+      "TargetPath": "App.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\matte\\Documents\\Programmation\\B2\\Matières\\CSharp\\Tetris\\Pages\\_Host.cshtml",
       "TargetPath": "Pages\\_Host.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\lewis\\Documents\\GitHub\\Tetris\\_Imports.razor",
+      "FilePath": "c:\\Users\\matte\\Documents\\Programmation\\B2\\Matières\\CSharp\\Tetris\\_Imports.razor",
       "TargetPath": "_Imports.razor",
       "FileKind": "componentImport"
     },
     {
-      "FilePath": "c:\\Users\\lewis\\Documents\\GitHub\\Tetris\\Pages\\TestScore.razor",
-      "TargetPath": "Pages\\TestScore.razor",
+      "FilePath": "c:\\Users\\matte\\Documents\\Programmation\\B2\\Matières\\CSharp\\Tetris\\Pages\\Option.razor",
+      "TargetPath": "Pages\\Option.razor",
       "FileKind": "component"
     }
   ],

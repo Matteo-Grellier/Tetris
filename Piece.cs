@@ -1,7 +1,7 @@
 using System;
 
 namespace SourceCode;
-class Piece {
+public class Piece {
     public static List<List<List<List<int>>>> shapes = new List<List<List<List<int>>>>(); //[type of figure][rotationVal][pour parcourir les cases (pour trouver leur x et y)][x ou y]
     public int x;
     public int y;
@@ -92,7 +92,6 @@ class Piece {
 
         return (TypeOfPiece)number+1;
     }
-
     public void TurnPiece(){
 
         int offsetRotation =  0;
@@ -166,4 +165,27 @@ class Piece {
 
         }
     }
+
+    public void ToSide(int dirX) {
+        Console.WriteLine(dirX);
+
+        Game.grid.RemovePiece(); //on enlève la pièce actuelle pour vérifier la nouvelle position (pour éviter les conflits).
+
+        bool isMovable = Game.grid.VerifyNewPosition(dirX, 0, 0);
+
+        if(!isMovable) {
+            Game.grid.AddToGrid(0, 0, 0);
+        } else {
+            Game.grid.AddToGrid(dirX, 0, 0);
+        }
+    }
+
+    public void Drop(int newDelay) {
+        Console.WriteLine("coucou cest moi le soft drop, ou alors le hard drop " + newDelay);
+
+        Game.delay = newDelay;
+    }
+
+
+
 }

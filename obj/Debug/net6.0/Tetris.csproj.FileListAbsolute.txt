@@ -81,3 +81,4 @@ C:\Users\winde\Documents\GitHub\Tetris\obj\Debug\net6.0\Tetris.dll
 C:\Users\winde\Documents\GitHub\Tetris\obj\Debug\net6.0\ref\Tetris.dll
 C:\Users\winde\Documents\GitHub\Tetris\obj\Debug\net6.0\Tetris.pdb
 C:\Users\winde\Documents\GitHub\Tetris\obj\Debug\net6.0\Tetris.genruntimeconfig.cache
+C:\Users\winde\Documents\GitHub\Tetris\obj\Debug\net6.0\scopedcss\Pages\Index.razor.rz.scp.css

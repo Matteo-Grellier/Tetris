@@ -1,4 +1,4 @@
-.back {
+/* .back {
     border-radius: 25px;
     color: purple;
     border: 2px solid black;
@@ -8,14 +8,19 @@
     width: 100px;
     padding-left: -100px;
     font-size: 20px;
-}
+} */
 
 .backButon {
     border: none;
     background-color: Transparent;
-    left: -50px;
-}
+    color: #AC4A74;
+    text-shadow: 2px 0 0 #843959, 0 2px 0 #843959, 0 -2px 0 #843959, -2px 0 0 #843959, 2px 2px 0 #843959, 2px -2px 0 #843959, -2px 2px 0 #843959, -2px -2px 0 #843959;
+    font-size: 24px;
+    margin-bottom: 10px;
 
+    /* left: -50px; */
+}
+/* 
 .back {
     position: relative;
     left: 70px;
@@ -40,4 +45,24 @@
 .container {
     width: 50%;
     margin: 0 auto;
+} */
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.element-grid-score {
+    display: flex;
+    flex-direction: row;
+}
+
+.right-element {
+    margin-left: 10px;
+}
+
+.button-game {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }

@@ -3,7 +3,7 @@
 <h3>Score</h3>
 
 @* <p> difficulty : @Score.selectedDifficulty[0] </p> *@
-<p> score : @Score.score </p>
+@* <p> score : @Score.score </p> *@
 
 <button @onclick="difeasy">easy</button>
 <button @onclick="difnormal">normal</button>
@@ -18,8 +18,7 @@
 <button @onclick="SoftDrop">soft drop</button>
 
 <p> debut / fin </p>
-<input placeholder="debut (int)" @bind="debut"/>
-<input placeholder="fin (int)" @bind="fin"/>
+
 <button @onclick="HardDrop">hard drop</button>
 
 
@@ -36,18 +35,15 @@
     private static int lines = 1;
 
     public static void Dolines(){ 
-        Score.LinesPoints(lines);
+        @* Score.LinesPoints(lines); *@
     }
 
     public static void SoftDrop(){ 
-        Score.SoftDrop();
+        @* Score.SoftDrop(); *@
     }
 
-    private static int debut = 0;
-    private static int fin = 0;
-
     public static void HardDrop(){ 
-        Score.HardDrop(debut, fin);
+        @* Score.HardDrop(); *@
     }
 
 

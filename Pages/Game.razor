@@ -8,10 +8,10 @@
 
 <div class="pageGame">
     <div class="back">
-            <button class="backButon" @onclick="NavigateToHome">Back</button>
+            <button class="backButon" @onclick="NavigateToHome"> &lt Back </button>
     </div>
     <div class="container">
-        <div class="grid">
+        <div class="element-grid-score">
             <table>
                 <tbody>
                     @foreach(var line in gridPrintable) {
@@ -24,18 +24,29 @@
                     }
                 </tbody>
             </table>
-            <table class="next-piece">
-                <tbody>
-                    @for(int i = 0; i < 4; i++) {
-                        <tr>
-                            @for(int j = 0; j < 4; j++) {
-                                <td>          
-                                </td>
+            <div class="right-element">
+                <div class="next-piece">
+                    <h2>NEXT</h2>
+                    <table class="next-piece-grid">
+                        <tbody>
+                            @for(int i = 0; i < 4; i++) {
+                                <tr>
+                                    @for(int j = 0; j < 4; j++) {
+                                        <td>          
+                                        </td>
+                                    }
+                                </tr>
                             }
-                        </tr>
-                    }
-                </tbody>
-            </table>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="score">
+                    <h2>SCORE</h2>
+                    <h2></h2>
+                </div>
+            </div>            
+        </div>
+        <div class="button-game">
             <button class="btn-dir to-left" @onclick="() => SourceCode.Game.grid.actualPiece.ToSide(-1)">
                 <img src="images/button-left-bigger.png">
             </button>
@@ -52,6 +63,7 @@
                 <img class="btn-turn" src="images/button-turn-clockwise-bigger.png">
             </button>
         </div>
+            
     </div>
 </div>
 

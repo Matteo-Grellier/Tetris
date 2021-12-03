@@ -15,10 +15,12 @@ public class Grid {
  
     
     public Grid(int width, int height) {
-        this.actualPiece = new Piece();
-        this.nextPiece = new Piece();
+
         this.width = width;
         this.height = height;
+        
+        this.actualPiece = new Piece(width, 2);
+        this.nextPiece = new Piece(width, 2);
 
 
         InitGrid(); 

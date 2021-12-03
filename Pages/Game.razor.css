@@ -66,3 +66,26 @@
     flex-direction: row;
     align-items: center;
 }
+
+.game-over {
+    position: fixed;
+    z-index: 10;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: auto auto;
+
+    font-size: 36px;
+    text-align: center;
+    color: #881b2d;
+    background-color: #AC4A74;
+    height: 200px;
+    width: 400px;
+    border-radius: 10px;
+}
+
+.game-over h2 {
+    
+}

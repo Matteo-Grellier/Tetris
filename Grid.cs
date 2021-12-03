@@ -93,4 +93,39 @@ public class Grid {
         }
     }
 
+    public void IsCompleteLine() {
+
+        int bufferSize = 0;
+
+        for(int i = 0; i < this.height; i++) {
+
+            bufferSize = 0;
+
+            for(int j = 0; j < this.width; j++) {
+
+                if(pieces[i][j] != (int)TypeOfPiece.EMPTY) {
+                    bufferSize += 1;
+                } else {
+                    bufferSize = 0;
+                }
+
+                if(bufferSize >= this.width) {
+                    this.DownAllPieces(i);
+                }
+            }
+        }
+    }
+
+    public void DownAllPieces(int index) {
+        this.pieces.RemoveAt(index);
+        
+        List<int> line = new List<int>();
+
+        for(int j = 0; j < this.width; j++) {
+            line.Add((int)TypeOfPiece.EMPTY);
+        }
+
+         pieces.Insert(0, line);
+    }
+
 }

@@ -3,7 +3,7 @@
 @using Microsoft.Extensions.Logging
 @inject NavigationManager NavigationManager
 @inject ILogger<Option> Logger
-    
+
 
 <div class="optionPage">
     <div class="back">
@@ -33,7 +33,7 @@
     </div>
 
     <div class="WH">
-        <EditForm Model="@grid" OnValidSubmit="@HandleValidSubmit">
+        <EditForm Model="@game" OnValidSubmit="@HandleValidSubmit">
             <DataAnnotationsValidator />
             <ValidationSummary />
             
@@ -64,7 +64,7 @@
 </div>
 
 @code {
-    private Game grid = new();
+    private Game game = new();
 
     private void NavigateToHome() { NavigationManager.NavigateTo("/"); } 
 

@@ -97,6 +97,9 @@ public class Grid {
 
         int bufferSize = 0;
 
+        //score
+        int numberOfLines = 0;
+
         for(int i = 0; i < this.height; i++) {
 
             bufferSize = 0;
@@ -111,9 +114,15 @@ public class Grid {
 
                 if(bufferSize >= this.width) {
                     this.DownAllPieces(i);
+                    numberOfLines += 1;
                 }
             }
         }
+
+        if (numberOfLines > 0) {
+            Game.score.LinesPoints(numberOfLines);
+        }
+
     }
 
     public void DownAllPieces(int index) {

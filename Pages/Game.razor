@@ -6,6 +6,12 @@
     StartRoundDelay();
 }
 
+@if(SourceCode.Game.isEnd) {
+    <div class="game-over">
+        <h2>Game over !</h2>
+    </div>
+}
+
 <div class="pageGame">
     <div class="back">
             <button class="backButon" @onclick="NavigateToHome"> &lt Back </button>
@@ -42,7 +48,7 @@
                 </div>
                 <div class="score">
                     <h2>SCORE</h2>
-                    <h2></h2>
+                    <h2>@SourceCode.Game.score.score</h2>
                 </div>
             </div>            
         </div>

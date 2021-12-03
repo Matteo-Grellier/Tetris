@@ -4,11 +4,14 @@ using System.ComponentModel.DataAnnotations;
 namespace SourceCode;
 
 public class Game {
+
+    private static int _height = 20;
+    private static int _width = 10;
     
     [Range(1, 30, ErrorMessage = "WTF BRO, POURQUOI AUTANT.")]
-    public static int width { get; set;}
+    public static int width { get => _width; set {_width = value;}}
     [Range(1, 30, ErrorMessage = "WTF BRO, POURQUOI AUTANT.")]
-    public static int height { get; set;}
+    public static int height { get => _height; set {_height = value;}}
 
     public static Grid grid;
     
@@ -57,7 +60,7 @@ public class Game {
                 Game.delay = 1000;
                 
                 grid.AddToGrid(0, 0, 0); //on ajoute la pièce actuel à sa dernière position (avant de mettre la prochaine pièce)
-
+                grid.IsCompleteLine();
 
                 grid.actualPiece = grid.nextPiece;
                 grid.nextPiece = new Piece();

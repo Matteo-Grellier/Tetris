@@ -8,49 +8,49 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Tetris
 build_property.RootNamespace = Tetris
-build_property.ProjectDir = C:\Users\lewis\Documents\GitHub\Tetris\
+build_property.ProjectDir = C:\Users\winde\Documents\GitHub\Tetris\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\lewis\Documents\GitHub\Tetris
+build_property.MSBuildProjectDirectory = C:\Users\winde\Documents\GitHub\Tetris
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/lewis/Documents/GitHub/Tetris/App.razor]
+[C:/Users/winde/Documents/GitHub/Tetris/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lewis/Documents/GitHub/Tetris/Pages/Index.razor]
+[C:/Users/winde/Documents/GitHub/Tetris/Pages/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lewis/Documents/GitHub/Tetris/Pages/TestScore.razor]
+[C:/Users/winde/Documents/GitHub/Tetris/Pages/TestScore.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGVzdFNjb3JlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lewis/Documents/GitHub/Tetris/_Imports.razor]
+[C:/Users/winde/Documents/GitHub/Tetris/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lewis/Documents/GitHub/Tetris/Pages/Game.razor]
+[C:/Users/winde/Documents/GitHub/Tetris/Pages/Game.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2FtZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-rlt5qxhhhz
 
-[C:/Users/lewis/Documents/GitHub/Tetris/Pages/Option.razor]
+[C:/Users/winde/Documents/GitHub/Tetris/Pages/Option.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3B0aW9uLnJhem9y
 build_metadata.AdditionalFiles.CssScope = b-asxmbxkwrt
 
-[C:/Users/lewis/Documents/GitHub/Tetris/Shared/MainLayout.razor]
+[C:/Users/winde/Documents/GitHub/Tetris/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-0vldsdwkji
 
-[C:/Users/lewis/Documents/GitHub/Tetris/Pages/Error.cshtml]
+[C:/Users/winde/Documents/GitHub/Tetris/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lewis/Documents/GitHub/Tetris/Pages/_Host.cshtml]
+[C:/Users/winde/Documents/GitHub/Tetris/Pages/_Host.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hvc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lewis/Documents/GitHub/Tetris/Pages/_Layout.cshtml]
+[C:/Users/winde/Documents/GitHub/Tetris/Pages/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0xheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

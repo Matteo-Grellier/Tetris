@@ -10,47 +10,59 @@
     <div class="back">
             <button class="backButon" @onclick="NavigateToHome">Back</button>
     </div>
-        <div class="container">
-            <div class="grid">
-        <table>
-            <tbody>
-                @foreach(var line in gridPrintable) {
-                    <tr>
-                        @foreach(var c in line) {
-                            <td id="c-@c">
-                            </td>
-                        }
-                    </tr>
-                }
-            </tbody>
-        </table>
-        <button class="btn-dir to-left" @onclick="() => SourceCode.Game.grid.actualPiece.ToSide(-1)">
-            <img src="images/button-left-bigger.png">
-        </button>
-        <button class="btn-dir to-right" @onclick="() => SourceCode.Game.grid.actualPiece.ToSide(1)">
-            <img src="images/button-right-bigger.png">
-        </button>
-        <button class="btn-dir to-soft-drop" @onmousedown="() => SourceCode.Game.grid.actualPiece.Drop(100)" @onmouseup="() => SourceCode.Game.grid.actualPiece.Drop(1000)">
-            <img src="images/button-right-bigger.png" style="transform: rotate(90deg);">
-        </button>
-        <button class="btn-dir to-soft-drop" @onclick="() => SourceCode.Game.grid.actualPiece.Drop(0)">
-            <img src="images/button-right-bigger.png" style="transform: rotate(90deg);">
-        </button>
+    <div class="container">
+        <div class="grid">
+            <table>
+                <tbody>
+                    @foreach(var line in gridPrintable) {
+                        <tr>
+                            @foreach(var c in line) {
+                                <td id="c-@c">
+                                </td>
+                            }
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <table class="next-piece">
+                <tbody>
+                    @for(int i = 0; i < 4; i++) {
+                        <tr>
+                            @for(int j = 0; j < 4; j++) {
+                                <td>          
+                                </td>
+                            }
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <button class="btn-dir to-left" @onclick="() => SourceCode.Game.grid.actualPiece.ToSide(-1)">
+                <img src="images/button-left-bigger.png">
+            </button>
+            <button class="btn-dir to-right" @onclick="() => SourceCode.Game.grid.actualPiece.ToSide(1)">
+                <img src="images/button-right-bigger.png">
+            </button>
+            <button class="btn-dir to-soft-drop" @onmousedown="() => SourceCode.Game.grid.actualPiece.Drop(100)" @onmouseup="() => SourceCode.Game.grid.actualPiece.Drop(1000)">
+                <img src="images/button-right-bigger.png" style="transform: rotate(90deg);">
+            </button>
+            <button class="btn-dir to-hard-drop" @onclick="() => SourceCode.Game.grid.actualPiece.Drop(0)">
+                <img src="images/button-hard-drop-bigger.png">
+            </button>
+            <button class="btn-dir btn-turn" @onclick="() => SourceCode.Game.grid.actualPiece.TurnPiece()">
+                <img class="btn-turn" src="images/button-turn-clockwise-bigger.png">
+            </button>
         </div>
     </div>
 </div>
 
-<button class="btn-turn" @onclick="() => SourceCode.Game.grid.actualPiece.TurnPiece()">
-    <img class="btn-turn" src="images/button-turn-clockwise-bigger.png">
-</button>
+
 
 
 @code {
 
     private static List<List<int>> gridPrintable = SourceCode.Game.grid.pieces;
     
-    private void NavigateToHome() { NavigationManager.NavigateTo("/"); } 
-
+    private void NavigateToHome() { NavigationManager.NavigateTo("/"); }
 
     void StartRoundDelay()
     {

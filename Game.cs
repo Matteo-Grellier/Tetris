@@ -55,7 +55,6 @@ public class Game {
 
             if(!isMovable) {
 
-                Game.delay = 1000;
                 
                 grid.AddToGrid(0, 0, 0); //on ajoute la pièce actuel à sa dernière position (avant de mettre la prochaine pièce)
                 grid.IsCompleteLine();

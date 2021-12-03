@@ -19,10 +19,6 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/winde/Documents/GitHub/Tetris/Pages/Index.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/winde/Documents/GitHub/Tetris/Pages/TestScore.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGVzdFNjb3JlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
@@ -34,6 +30,10 @@ build_metadata.AdditionalFiles.CssScope =
 [C:/Users/winde/Documents/GitHub/Tetris/Pages/Game.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2FtZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-rlt5qxhhhz
+
+[C:/Users/winde/Documents/GitHub/Tetris/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-3gflxn05a0
 
 [C:/Users/winde/Documents/GitHub/Tetris/Pages/Option.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3B0aW9uLnJhem9y

@@ -78,6 +78,39 @@
         }
       },
       {
+        "HashCode": 1148884714,
+        "Kind": "Components.Component",
+        "Name": "Tetris.Pages.TestScore",
+        "AssemblyName": "Tetris",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "TestScore"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Tetris.Pages.TestScore"
+        }
+      },
+      {
+        "HashCode": -210390273,
+        "Kind": "Components.Component",
+        "Name": "Tetris.Pages.TestScore",
+        "AssemblyName": "Tetris",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Tetris.Pages.TestScore"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Tetris.Pages.TestScore",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
         "HashCode": -430511505,
         "Kind": "Components.Component",
         "Name": "Tetris.Pages.Game",

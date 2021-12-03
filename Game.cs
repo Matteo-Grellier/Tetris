@@ -24,7 +24,7 @@ public class Game {
     public static void Init() {
         Console.WriteLine("Initialisation...");
 
-        Piece.InitShapes(); //il faudra absolument réinitialisé le tableau (car quand on recharge la page, cette méthode est appelé)
+        Piece.InitShapes(); //il faudra absolument réinitialisé le tableau (car quand on recharge la page, cette méthode est appelé) 
         
 
 
@@ -66,7 +66,7 @@ public class Game {
                 grid.IsCompleteLine();
 
                 grid.actualPiece = grid.nextPiece;
-                grid.nextPiece = new Piece();
+                grid.nextPiece = new Piece(grid.width, 2);
 
                 offsetY = 0;
                 offsetX = 0;

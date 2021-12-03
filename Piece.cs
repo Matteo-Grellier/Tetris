@@ -61,9 +61,9 @@ public class Piece {
 
     }
 
-    public Piece() {
-        this.x = 2; //(Game.grid.width / 2);
-        this.y = 2;
+    public Piece(int x, int y) {
+        this.x = (x / 2); //(Game.grid.width / 2);
+        this.y = y;
         this.rotation = 0;
 
         this.type = RandomTypeOfPiece(); //il faudra changer (système d'aléatoire)

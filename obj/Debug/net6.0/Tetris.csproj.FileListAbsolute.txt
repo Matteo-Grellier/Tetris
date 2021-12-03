@@ -18,7 +18,6 @@ C:\Users\matte\Documents\Programmation\B2\Matières\CSharp\Tetris\obj\Debug\net6
 C:\Users\matte\Documents\Programmation\B2\Matières\CSharp\Tetris\obj\Debug\net6.0\staticwebassets.build.json
 C:\Users\matte\Documents\Programmation\B2\Matières\CSharp\Tetris\obj\Debug\net6.0\staticwebassets.development.json
 C:\Users\matte\Documents\Programmation\B2\Matières\CSharp\Tetris\obj\Debug\net6.0\scopedcss\Shared\MainLayout.razor.rz.scp.css
-C:\Users\matte\Documents\Programmation\B2\Matières\CSharp\Tetris\obj\Debug\net6.0\scopedcss\Shared\NavMenu.razor.rz.scp.css
 C:\Users\matte\Documents\Programmation\B2\Matières\CSharp\Tetris\obj\Debug\net6.0\scopedcss\bundle\Tetris.styles.css
 C:\Users\matte\Documents\Programmation\B2\Matières\CSharp\Tetris\obj\Debug\net6.0\scopedcss\projectbundle\Tetris.bundle.scp.css
 C:\Users\matte\Documents\Programmation\B2\Matières\CSharp\Tetris\obj\Debug\net6.0\Tetris.dll
@@ -81,3 +80,5 @@ C:\Users\winde\Documents\GitHub\Tetris\obj\Debug\net6.0\Tetris.dll
 C:\Users\winde\Documents\GitHub\Tetris\obj\Debug\net6.0\ref\Tetris.dll
 C:\Users\winde\Documents\GitHub\Tetris\obj\Debug\net6.0\Tetris.pdb
 C:\Users\winde\Documents\GitHub\Tetris\obj\Debug\net6.0\Tetris.genruntimeconfig.cache
+C:\Users\matte\Documents\Programmation\B2\Matières\CSharp\Tetris\obj\Debug\net6.0\scopedcss\Pages\Game.razor.rz.scp.css
+C:\Users\matte\Documents\Programmation\B2\Matières\CSharp\Tetris\obj\Debug\net6.0\scopedcss\Pages\Option.razor.rz.scp.css

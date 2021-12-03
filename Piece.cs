@@ -75,7 +75,7 @@ public class Piece {
 
         this.type = RandomTypeOfPiece(); //il faudra changer (système d'aléatoire)
 
-        Console.WriteLine("type : " + (int)this.type);
+        // Console.WriteLine("type : " + (int)this.type);
 
         this.shapeOfPiece = shapes[(int)this.type-1];
     }

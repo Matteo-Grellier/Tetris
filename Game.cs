@@ -31,9 +31,7 @@ public class Game {
         score = new Score(1);
 
         grid = new Grid(width, height);
-
-        delay = 1000;
-
+        Console.WriteLine(delay);
 
         // Score.score = 0;
     }
@@ -68,15 +66,15 @@ public class Game {
                 offsetY = 0;
                 offsetX = 0;
 
-                Console.WriteLine("Fin de la pièce, début de la nouvelle");
+                // Console.WriteLine("Fin de la pièce, début de la nouvelle");
             } else {
                 offsetY = 1;
                 offsetX = 0;
 
 
-                Console.WriteLine("nouvelle position pour la pièce !");
-                Console.WriteLine("size : " + grid.pieces.Count);
-                Console.WriteLine("x and y : " + grid.actualPiece.x + " " + grid.actualPiece.y);
+                // Console.WriteLine("nouvelle position pour la pièce !");
+                // Console.WriteLine("size : " + grid.pieces.Count);
+                // Console.WriteLine("x and y : " + grid.actualPiece.x + " " + grid.actualPiece.y);
             }
 
             grid.AddToGrid(offsetX, offsetY, offsetRotation); //on ajoute la pièce à sa nouvelle position.

@@ -4,7 +4,13 @@
 
 @{
     StartRoundDelay();
+    @* SourceCode.Menu.Play(); *@
+    bool hidden = true;
 }
+
+<audio id="musicplayer" autoplay>
+  <source src="Sound/Testriste.mp3">
+</audio>
 
 <div class="pageGame">
     <div class="back">
@@ -58,6 +64,7 @@
 
 
 
+
 @code {
 
     private static List<List<int>> gridPrintable = SourceCode.Game.grid.pieces;
@@ -79,3 +86,4 @@
         }), null, SourceCode.Game.delay, SourceCode.Game.delay);
     }
 }
+

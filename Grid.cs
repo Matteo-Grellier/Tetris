@@ -44,7 +44,7 @@ public class Grid {
             int xBox = actualPiece.x+offsetX+actualPiece.shapeOfPiece[actualPiece.rotation+offsetRotation][k][0];  //[type of figure][rotationVal][pour parcourir les cases (pour trouver leur x et y)][x ou y]
             int yBox = actualPiece.y+offsetY+actualPiece.shapeOfPiece[actualPiece.rotation+offsetRotation][k][1];
 
-            Console.WriteLine("new : " + xBox + " " + yBox);
+            // Console.WriteLine("new : " + xBox + " " + yBox);
 
             pieces[yBox][xBox] = (int)actualPiece.type;
 
@@ -88,7 +88,7 @@ public class Grid {
 
             pieces[yOriginalBox][xOriginalBox] = (int)TypeOfPiece.EMPTY;
 
-            Console.WriteLine("DELETE original : " + xOriginalBox + " " + yOriginalBox);
+            // Console.WriteLine("DELETE original : " + xOriginalBox + " " + yOriginalBox);
 
         }
     }

@@ -58,6 +58,10 @@ public class Score{
     //to launch when lines are destroyed, augment score depending on the difficulty and number of lines destroyed
     public void LinesPoints(int numberOfLines){
         score += selectedDifficulty[numberOfLines];
+        Console.WriteLine(":::::::::::::::::::::::::::::::::::::::::");
+        Console.WriteLine("(lines) numberOfLines = " + numberOfLines);
+        Console.WriteLine("(lines) score added = " + selectedDifficulty[numberOfLines]);
+        Console.WriteLine("(lines) score = " + this.score);
     }
 
     public void Begin(int yvalue){

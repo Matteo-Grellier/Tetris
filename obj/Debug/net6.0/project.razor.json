@@ -45,6 +45,39 @@
         }
       },
       {
+        "HashCode": -430511505,
+        "Kind": "Components.Component",
+        "Name": "Tetris.Pages.Game",
+        "AssemblyName": "Tetris",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Game"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Tetris.Pages.Game"
+        }
+      },
+      {
+        "HashCode": 1048347916,
+        "Kind": "Components.Component",
+        "Name": "Tetris.Pages.Game",
+        "AssemblyName": "Tetris",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Tetris.Pages.Game"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Tetris.Pages.Game",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
         "HashCode": -1153309791,
         "Kind": "Components.Component",
         "Name": "Tetris.Pages.Index",
@@ -107,39 +140,6 @@
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
           "Common.TypeName": "Tetris.Pages.TestScore",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": -430511505,
-        "Kind": "Components.Component",
-        "Name": "Tetris.Pages.Game",
-        "AssemblyName": "Tetris",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Game"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Tetris.Pages.Game"
-        }
-      },
-      {
-        "HashCode": 1048347916,
-        "Kind": "Components.Component",
-        "Name": "Tetris.Pages.Game",
-        "AssemblyName": "Tetris",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Tetris.Pages.Game"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Tetris.Pages.Game",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },

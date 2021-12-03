@@ -54,7 +54,10 @@ public class Game {
 
             if(!isMovable) {
 
+                Game.score.End(grid.actualPiece.y);
+
                 Game.delay = 1000;
+                Game.score.drop = "null";
                 
                 grid.AddToGrid(0, 0, 0); //on ajoute la pièce actuel à sa dernière position (avant de mettre la prochaine pièce)
 
@@ -76,7 +79,18 @@ public class Game {
                 Console.WriteLine("x and y : " + grid.actualPiece.x + " " + grid.actualPiece.y);
             }
 
-            grid.AddToGrid(offsetX, offsetY, offsetRotation); //on ajoute la pièce à sa nouvelle position.
+            //ici
+            bool isPosable = grid.VerifyNewPosition(offsetX, offsetY, offsetRotation);
+
+            if (isPosable){
+                grid.AddToGrid(offsetX, offsetY, offsetRotation); //on ajoute la pièce à sa nouvelle position.
+
+            } else {
+                isEnd = true; 
+                Console.WriteLine("HAHA NOOB YOU FAILLLLLLED");
+
+            }
+            
 
         }
     }

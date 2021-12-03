@@ -14,11 +14,9 @@ public class Piece {
 
         //I 1
         shapes.Add(new List<List<List<int>>>() {
-
             new List<List<int>>(){new List<int>(){0,2}, new List<int>(){0,1}, new List<int>(){0,0},  new List<int>(){0,-1}}, 
             new List<List<int>>(){new List<int>(){2,0}, new List<int>(){1,0}, new List<int>(){0,0},  new List<int>(){-1,0}},
         });
-
 
         //J 2
         shapes.Add(new List<List<List<int>>>() {
@@ -26,7 +24,6 @@ public class Piece {
             new List<List<int>>(){new List<int>(){-1,0}, new List<int>(){0,0}, new List<int>(){1,0},  new List<int>(){1,-1}},
             new List<List<int>>(){new List<int>(){1,1}, new List<int>(){0,1}, new List<int>(){0,0},  new List<int>(){0,-1}},
             new List<List<int>>(){new List<int>(){-1,1}, new List<int>(){-1,0}, new List<int>(){0,0},  new List<int>(){1,0}},
-
         });
 
         //L 3
@@ -35,7 +32,6 @@ public class Piece {
             new List<List<int>>(){new List<int>(){-1,0}, new List<int>(){0,0}, new List<int>(){1,0},  new List<int>(){-1,-1}},
             new List<List<int>>(){new List<int>(){1,-1}, new List<int>(){0,1}, new List<int>(){0,0},  new List<int>(){0,-1}},
             new List<List<int>>(){new List<int>(){1,1}, new List<int>(){-1,0}, new List<int>(){0,0},  new List<int>(){1,0}},
-
         });
 
         //Z 4
@@ -53,7 +49,6 @@ public class Piece {
         //o 6
         shapes.Add(new List<List<List<int>>>() {
             new List<List<int>>(){new List<int>(){0,0}, new List<int>(){1,0}, new List<int>(){0,-1},  new List<int>(){1,-1}},
-            
         });
 
         //T 7
@@ -62,14 +57,12 @@ public class Piece {
             new List<List<int>>(){new List<int>(){0,0}, new List<int>(){1,0}, new List<int>(){0,1},  new List<int>(){0,-1}},
             new List<List<int>>(){new List<int>(){0,0}, new List<int>(){1,0}, new List<int>(){-1,0},  new List<int>(){0,1}},
             new List<List<int>>(){new List<int>(){0,0}, new List<int>(){-1,0}, new List<int>(){0,1},  new List<int>(){0,-1}},
-            
         });
-
 
     }
 
     public Piece() {
-        this.x = 2;
+        this.x = 2; //(Game.grid.width / 2);
         this.y = 2;
         this.rotation = 0;
 
@@ -87,6 +80,7 @@ public class Piece {
 
         return (TypeOfPiece)number+1;
     }
+
     public void TurnPiece(){
 
         int offsetRotation =  0;
@@ -113,34 +107,6 @@ public class Piece {
         } else {
             offsetRotation = 0;
         }
-
-
-
-        // // 4 positions
-        // if ( shapeOfPiece == shapes[1] || shapeOfPiece == shapes[2] || shapeOfPiece == shapes[6]) { 
-        //     if (this.rotation == 3 ){
-        //         offsetRotation = -3;
-
-        //     } else {
-        //         offsetRotation = 1;
-        //     }
-
-        // // 2 positions
-        // } else if ( shapeOfPiece == shapes[0] || shapeOfPiece == shapes[3] || shapeOfPiece == shapes[4]) {
-        //     if (this.rotation == 1 ){
-        //         offsetRotation = -1;
-
-        //     } else {
-        //         offsetRotation = 1;
-        //     }
-
-        // // 1 positions
-        // } else if ( shapeOfPiece == shapes[5] ) {
-        //     offsetRotation = 0;
-
-        // }
-
-        // int offsetRotation = 1;
 
         Game.grid.RemovePiece(); //on enlève la pièce actuelle pour vérifier la nouvelle position (pour éviter les conflits).
 
@@ -172,10 +138,22 @@ public class Piece {
 
     public void Drop(int newDelay) {
         Console.WriteLine("coucou cest moi le soft drop, ou alors le hard drop " + newDelay);
+        
+        if (newDelay == 100){
+            Game.score.drop = "soft";
+            Game.score.Begin(this.y);
 
+        } else if (newDelay == 0){
+            Game.score.drop = "hard";
+            Game.score.Begin(this.y);
+
+
+        } else if (newDelay == 1000){
+            Game.score.End(this.y);
+            Game.score.drop = "null";
+
+        }
         Game.delay = newDelay;
     }
-
-
 
 }

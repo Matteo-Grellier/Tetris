@@ -14,7 +14,6 @@
         <button  @onclick="() => {SourceCode.Menu.Play(); NavigateToGame();}">Play</button>
         <button @onclick="NavigateToOptions">Options</button>
         <button @onclick="NavigateToCredits">Credits</button>
-        <button @onclick="() => SourceCode.Menu.Quit()">Quit</button>
 </div>
 @code { 
     private void NavigateToGame() { NavigationManager.NavigateTo("/game"); } 

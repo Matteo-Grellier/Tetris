@@ -56,12 +56,15 @@ public class Game {
 
             if(!isMovable) {
 
+<<<<<<< HEAD
 
                 Game.score.End(grid.actualPiece.y);
 
                 Game.delay = difficultyDelay;
                 Game.score.drop = "null";
 
+=======
+>>>>>>> ab39d008948d05bcac55c8d9f9324d00414a18e0
                 
                 grid.AddToGrid(0, 0, 0); //on ajoute la pièce actuel à sa dernière position (avant de mettre la prochaine pièce)
                 grid.IsCompleteLine();

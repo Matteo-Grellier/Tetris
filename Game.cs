@@ -8,14 +8,15 @@ public class Game {
     private static int _height = 20;
     private static int _width = 10;
     
-    [Range(1, 30, ErrorMessage = "WTF BRO, POURQUOI AUTANT.")]
+    [Required]
     public static int width { get => _width; set {_width = value;}}
-    [Range(1, 30, ErrorMessage = "WTF BRO, POURQUOI AUTANT.")]
+    [Required]
     public static int height { get => _height; set {_height = value;}}
 
     public static Grid grid;
-    
+    public static int difficultyDelay;
     public static Score score;
+    public static int choosenDifficulty = 0;
     public static int delay;
 
     public static bool isEnd = false;
@@ -28,12 +29,10 @@ public class Game {
         
 
 
-        score = new Score(1);
+        score = new Score(choosenDifficulty);
 
         grid = new Grid(width, height);
-
-        delay = 1000;
-
+        Console.WriteLine(delay);
 
         // Score.score = 0;
     }
@@ -57,10 +56,12 @@ public class Game {
 
             if(!isMovable) {
 
+
                 Game.score.End(grid.actualPiece.y);
 
-                Game.delay = 1000;
+                Game.delay = difficultyDelay;
                 Game.score.drop = "null";
+
                 
                 grid.AddToGrid(0, 0, 0); //on ajoute la pièce actuel à sa dernière position (avant de mettre la prochaine pièce)
                 grid.IsCompleteLine();
@@ -71,15 +72,15 @@ public class Game {
                 offsetY = 0;
                 offsetX = 0;
 
-                Console.WriteLine("Fin de la pièce, début de la nouvelle");
+                // Console.WriteLine("Fin de la pièce, début de la nouvelle");
             } else {
                 offsetY = 1;
                 offsetX = 0;
 
 
-                Console.WriteLine("nouvelle position pour la pièce !");
-                Console.WriteLine("size : " + grid.pieces.Count);
-                Console.WriteLine("x and y : " + grid.actualPiece.x + " " + grid.actualPiece.y);
+                // Console.WriteLine("nouvelle position pour la pièce !");
+                // Console.WriteLine("size : " + grid.pieces.Count);
+                // Console.WriteLine("x and y : " + grid.actualPiece.x + " " + grid.actualPiece.y);
             }
 
             //ici

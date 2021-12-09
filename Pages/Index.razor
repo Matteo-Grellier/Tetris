@@ -11,7 +11,7 @@
 
 
 <div class="menu">
-        <button  @onclick="() => {SourceCode.Menu.Play(); NavigateToGame();}">Play</button>
+        <button  @onclick="LaunchGame">Play</button>
         <button @onclick="NavigateToOptions">Options</button>
         <button @onclick="NavigateToCredits">Credits</button>
 </div>
@@ -19,4 +19,11 @@
     private void NavigateToGame() { NavigationManager.NavigateTo("/game"); } 
     private void NavigateToOptions() { NavigationManager.NavigateTo("/option"); } 
     private void NavigateToCredits() { NavigationManager.NavigateTo("/credits"); } 
+
+    private void LaunchGame() {
+        SourceCode.Piece.shapes = new List<List<List<List<int>>>>();
+        SourceCode.Game.Init();
+        SourceCode.Game.Round();
+        NavigateToGame();
+    }
 }

@@ -2,22 +2,23 @@
 @inject NavigationManager NavigationManager
 @using System.Threading;
 
-@{
-    
-    @* SourceCode.Menu.Play(); *@
-    bool hidden = true;
-
-    @* InvokeAsync(() => {
-        StartRoundDelay();
-        @* StateHasChanged();
-
-    }); *@
-
-}
-
 <audio id="musicplayer" autoplay>
   <source src="Sound/Testriste.mp3">
 </audio>
+
+@if(SourceCode.Game.isEnd) {
+    <div class="game-over-bg">
+        <div class="game-over">
+            <h2>Game over !</h2>
+            <div class="back">
+                <button class="backButon" @onclick="NavigateToHome"> &lt Back </button>
+            </div>
+            <div class="retry">
+                <button class="retryButton" @onclick="Retry"> Retry </button>
+            </div>
+        </div>
+    </div>
+}
 
 <div class="pageGame">
     <div class="back">
@@ -27,7 +28,7 @@
         <div class="element-grid-score">
             <table>
                 <tbody>
-                    @foreach(var line in gridPrintable) {
+                    @foreach(var line in SourceCode.Game.grid.pieces) {
                         <tr>
                             @foreach(var c in line) {
                                 <td id="c-@c">
@@ -42,14 +43,14 @@
                     <h2>NEXT</h2>
                     <table class="next-piece-grid">
                         <tbody>
-                            @for(int i = 0; i < 4; i++) {
-                                <tr>
-                                    @for(int j = 0; j < 4; j++) {
-                                        <td>          
-                                        </td>
-                                    }
-                                </tr>
-                            }
+                        @foreach(var line in SourceCode.Game.nextPieceGrid.pieces) {
+                            <tr>
+                                @foreach(var c in line) {
+                                    <td id="c-@c">
+                                    </td>
+                                }
+                            </tr>
+                        }
                         </tbody>
                     </table>
                 </div>
@@ -80,30 +81,14 @@
     </div>
 </div>
 
-
-
-
-
 @code {
 
     private static List<List<int>> gridPrintable = SourceCode.Game.grid.pieces;
     
-    private void NavigateToHome() { NavigationManager.NavigateTo("/"); }
-
-    @* void StartRoundDelay()
-    {
-        var timer = new Timer(new TimerCallback(_ =>
-        {
-            gridPrintable = SourceCode.Game.grid.pieces;
-
-            InvokeAsync(() =>
-            {
-                StateHasChanged();
-            });
-
-
-        }), null, SourceCode.Game.delay, SourceCode.Game.delay);
-    } *@
+    private void NavigateToHome() { 
+        SourceCode.Game.isEnd = true;
+        NavigationManager.NavigateTo("/");       
+    }
 
     protected override async Task OnInitializedAsync()
     {
@@ -114,6 +99,12 @@
 
             StateHasChanged();
         }
+    }
+
+    private void Retry() {
+        SourceCode.Piece.shapes = new List<List<List<List<int>>>>();
+        SourceCode.Game.Init();
+        OnInitializedAsync();
     }
 }
 

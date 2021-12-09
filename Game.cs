@@ -31,9 +31,6 @@ public class Game {
         score = new Score(choosenDifficulty);
 
         grid = new Grid(width, height);
-        Console.WriteLine(delay);
-
-        // Score.score = 0;
     }
 
     public static async Task Round() { //il faudra trouver une autre solution pour le Delay
@@ -68,16 +65,9 @@ public class Game {
 
                 offsetY = 0;
                 offsetX = 0;
-
-                // Console.WriteLine("Fin de la pièce, début de la nouvelle");
             } else {
                 offsetY = 1;
                 offsetX = 0;
-
-
-                // Console.WriteLine("nouvelle position pour la pièce !");
-                // Console.WriteLine("size : " + grid.pieces.Count);
-                // Console.WriteLine("x and y : " + grid.actualPiece.x + " " + grid.actualPiece.y);
             }
 
             //ici
@@ -88,8 +78,7 @@ public class Game {
 
             } else {
                 isEnd = true; 
-                Console.WriteLine("HAHA NOOB YOU FAILLLLLLED");
-
+                Console.WriteLine("Game Over");
             }
             
 

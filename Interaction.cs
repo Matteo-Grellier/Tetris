@@ -1,5 +1,0 @@
-namespace SourceCode;
-
-class Interaction {
-    
-}

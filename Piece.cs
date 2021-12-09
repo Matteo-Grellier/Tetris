@@ -137,7 +137,6 @@ public class Piece {
     }
 
     public void Drop(int newDelay) {
-        Console.WriteLine("coucou cest moi le soft drop, ou alors le hard drop " + newDelay);
         
         if (newDelay == 100){
             Game.score.drop = "soft";

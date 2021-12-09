@@ -8,9 +8,33 @@
     bool hidden = true;
 }
 
-<audio id="musicplayer" autoplay>
-  <source src="Sound/Testriste.mp3">
-</audio>
+@switch(SourceCode.Game.choosenDifficulty)
+{
+    case 1:
+    <audio id="musicplayer" autoplay loop>
+        <source src="Sound\testriste-easy.mp3">
+    </audio>
+    break;
+
+    case 2:
+    <audio id="musicplayer" autoplay loop>
+        <source src="Sound\testriste-moyen.mp3">
+    </audio>
+    break;
+
+    case 3:
+    <audio id="musicplayer" autoplay loop>
+        <source src="Sound\testriste-extreme.mp3">
+    </audio>
+    break;
+
+    case 5:
+    <audio id="musicplayer" autoplay loop>
+        <source src="Sound\testriste-purpl.mp3">
+    </audio>
+    break;
+}
+
 
 <div class="pageGame">
     <div class="back">

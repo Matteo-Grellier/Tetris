@@ -3,9 +3,16 @@
 @using System.Threading;
 
 @{
-    StartRoundDelay();
+    
     @* SourceCode.Menu.Play(); *@
     bool hidden = true;
+
+    @* InvokeAsync(() => {
+        StartRoundDelay();
+        @* StateHasChanged();
+
+    }); *@
+
 }
 
 <audio id="musicplayer" autoplay>
@@ -83,7 +90,7 @@
     
     private void NavigateToHome() { NavigationManager.NavigateTo("/"); }
 
-    void StartRoundDelay()
+    @* void StartRoundDelay()
     {
         var timer = new Timer(new TimerCallback(_ =>
         {
@@ -96,6 +103,17 @@
 
 
         }), null, SourceCode.Game.delay, SourceCode.Game.delay);
+    } *@
+
+    protected override async Task OnInitializedAsync()
+    {
+        while(!SourceCode.Game.isEnd) {
+            await Task.Delay(SourceCode.Game.delay);
+
+            SourceCode.Game.Round();
+
+            StateHasChanged();
+        }
     }
 }
 

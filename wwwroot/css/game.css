@@ -8,12 +8,6 @@ td {
     border: 1px solid #000;
 }
 
-/* .btn-turn {
-    margin-left : 100px;
-    height: 70px;
-    width: 70px;
-} */
-
 td#c-4 {
     background-color: #2c20d8; 
 }
@@ -29,16 +23,6 @@ td#c-6 {
 td#c-7 {
     background-color: #f7df07; 
 }
-
-/* bugged */
-td#c-8 {background-color: #fdfdfd; }
-td#c-9 {background-color: #ffffff; }
-td#c-10 {background-color: #ffffff; }
-td#c-11 {background-color: #ffffff; }
-td#c-12 {background-color: #ffffff; }
-td#c-13 {background-color: #ffffff; }
-td#c-14 {background-color: #ffffff; }
-
 
 td#c-1 {
     background-color: #d85420; 

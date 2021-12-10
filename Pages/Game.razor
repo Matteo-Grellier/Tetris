@@ -106,14 +106,13 @@
 </div>
 
 @code {
-
-    private static List<List<int>> gridPrintable = SourceCode.Game.grid.pieces;
-    
+    //Revenir à la page Home (en appuyant sur 'Back')
     private void NavigateToHome() { 
         SourceCode.Game.isEnd = true;
         NavigationManager.NavigateTo("/");       
     }
 
+    //Fonction appelé automatiquement au chargement de la page (fonction lié au C# et override). Permet de lancer la boucle de jeu.
     protected override async Task OnInitializedAsync()
     {
         while(!SourceCode.Game.isEnd) {
@@ -125,6 +124,7 @@
         }
     }
 
+    //Fonction appelée lors de l'appui du bouton 'Retry' dans le menu 'Game Over' si le joueur décide de recommencer
     private void Retry() {
         SourceCode.Piece.shapes = new List<List<List<List<int>>>>();
         SourceCode.Game.Init();

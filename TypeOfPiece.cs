@@ -2,10 +2,10 @@ namespace SourceCode;
 public enum TypeOfPiece {
     EMPTY,
     I,
-    O,
-    T,
-    L,
     J,
+    L,
     Z,
-    S
+    S,
+    O,
+    T
 }

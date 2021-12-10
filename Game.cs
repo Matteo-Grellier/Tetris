@@ -1,6 +1,5 @@
 using System.Threading;
 using System.ComponentModel.DataAnnotations;
-
 namespace SourceCode;
 
 public class Game {
@@ -61,12 +60,10 @@ public class Game {
 
             if(!isMovable) {
 
-
                 Game.score.End(grid.actualPiece.y);
 
                 Game.delay = difficultyDelay;
                 Game.score.drop = "null";
-
                 
                 grid.AddToGrid(0, 0, 0); //on ajoute la pièce actuel à sa dernière position (avant de mettre la prochaine pièce)
                 grid.IsCompleteLine();

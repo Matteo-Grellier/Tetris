@@ -40,11 +40,14 @@ public class Grid {
     }
     public void AddToGrid(int offsetX, int offsetY, int offsetRotation) {
 
- 
-        for(int k = 0; k < actualPiece.shapeOfPiece[actualPiece.rotation%actualPiece.shapeOfPiece.Count].Count; k++) {
+        int actualRotation = actualPiece.rotation%actualPiece.shapeOfPiece.Count;
+        int requestRotation = (actualPiece.rotation+offsetRotation)%actualPiece.shapeOfPiece.Count;
 
-            int xBox = actualPiece.x+offsetX+actualPiece.shapeOfPiece[(actualPiece.rotation+offsetRotation)%actualPiece.shapeOfPiece.Count][k][0];  //[type of figure][rotationVal][pour parcourir les cases (pour trouver leur x et y)][x ou y]
-            int yBox = actualPiece.y+offsetY+actualPiece.shapeOfPiece[(actualPiece.rotation+offsetRotation)%actualPiece.shapeOfPiece.Count][k][1];
+ 
+        for(int k = 0; k < actualPiece.shapeOfPiece[actualRotation].Count; k++) {
+
+            int xBox = actualPiece.x+offsetX+actualPiece.shapeOfPiece[requestRotation][k][0];  //[type of figure][rotationVal][pour parcourir les cases (pour trouver leur x et y)][x ou y]
+            int yBox = actualPiece.y+offsetY+actualPiece.shapeOfPiece[requestRotation][k][1];
 
             // Console.WriteLine("new : " + xBox + " " + yBox);
 
@@ -59,14 +62,17 @@ public class Grid {
     }
 
     public bool VerifyNewPosition(int offsetX, int offsetY, int offsetRotation) {
+
+        int actualRotation = actualPiece.rotation%actualPiece.shapeOfPiece.Count;
+        int requestRotation = (actualPiece.rotation+offsetRotation)%actualPiece.shapeOfPiece.Count;
         
-        for(int k = 0; k < actualPiece.shapeOfPiece[actualPiece.rotation%actualPiece.shapeOfPiece.Count].Count; k++) {
+        for(int k = 0; k < actualPiece.shapeOfPiece[actualRotation].Count; k++) {
 
-            int xOriginalBox = actualPiece.x+actualPiece.shapeOfPiece[actualPiece.rotation%actualPiece.shapeOfPiece.Count][k][0];
-            int yOriginalBox = actualPiece.y+actualPiece.shapeOfPiece[actualPiece.rotation%actualPiece.shapeOfPiece.Count][k][1];
+            int xOriginalBox = actualPiece.x+actualPiece.shapeOfPiece[actualRotation][k][0];
+            int yOriginalBox = actualPiece.y+actualPiece.shapeOfPiece[actualRotation][k][1];
 
-            int xBox = actualPiece.x+offsetX+actualPiece.shapeOfPiece[(actualPiece.rotation+offsetRotation)%actualPiece.shapeOfPiece.Count][k][0];  //[type of figure][rotationVal][pour parcourir les cases (pour trouver leur x et y)][x ou y]
-            int yBox = actualPiece.y+offsetY+actualPiece.shapeOfPiece[(actualPiece.rotation+offsetRotation)%actualPiece.shapeOfPiece.Count][k][1];
+            int xBox = actualPiece.x+offsetX+actualPiece.shapeOfPiece[requestRotation][k][0];  //[type of figure][rotationVal][pour parcourir les cases (pour trouver leur x et y)][x ou y]
+            int yBox = actualPiece.y+offsetY+actualPiece.shapeOfPiece[requestRotation][k][1];
 
             if(xBox < 0 || yBox < 0 || xBox >= width || yBox >= height) { //vérifier si on ne fait pas de outOfRange
                 return false;
@@ -82,11 +88,13 @@ public class Grid {
 
 
     public void RemovePiece() {
+
+        int actualRotation = actualPiece.rotation%actualPiece.shapeOfPiece.Count;
         
-        for(int k = 0; k < actualPiece.shapeOfPiece[actualPiece.rotation%actualPiece.shapeOfPiece.Count].Count; k++) {
+        for(int k = 0; k < actualPiece.shapeOfPiece[actualRotation].Count; k++) {
             
-            int xOriginalBox = actualPiece.x+actualPiece.shapeOfPiece[actualPiece.rotation%actualPiece.shapeOfPiece.Count][k][0];
-            int yOriginalBox = actualPiece.y+actualPiece.shapeOfPiece[actualPiece.rotation%actualPiece.shapeOfPiece.Count][k][1];
+            int xOriginalBox = actualPiece.x+actualPiece.shapeOfPiece[actualRotation][k][0];
+            int yOriginalBox = actualPiece.y+actualPiece.shapeOfPiece[actualRotation][k][1];
 
             pieces[yOriginalBox][xOriginalBox] = (int)TypeOfPiece.EMPTY;
 

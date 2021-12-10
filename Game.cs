@@ -13,9 +13,11 @@ public class Game {
     public static int height { get => _height; set {_height = value;}}
 
     public static Grid grid;
-    public static int choosenDifficulty = 0;
-    public static int difficultyDelay = 0;
+
+    public static Grid nextPieceGrid;
+    public static int difficultyDelay = 1000;
     public static Score score;
+    public static int choosenDifficulty = 2;
     public static int delay;
 
     public static bool isEnd = false;
@@ -24,23 +26,21 @@ public class Game {
     public static void Init() {
         Console.WriteLine("Initialisation...");
 
-        Piece.InitShapes(); //il faudra absolument réinitialisé le tableau (car quand on recharge la page, cette méthode est appelé) 
+        Piece.InitShapes(); //Initialisation du tableau de Pieces. 
         
+        delay = difficultyDelay;
+        isEnd = false; //on met isEnd à false (utile lors d'un retour en jeu via le bouton 'Retry' ou 'Play')
 
-
-        score = new Score(choosenDifficulty);
-
-        grid = new Grid(width, height);
+        score = new Score(choosenDifficulty); //Initialisation du Score (en fonction de la difficulté).
+        grid = new Grid(width, height); //Initialisation de la grille
+        
+        nextPieceGrid = new Grid(6, 6); //création d'une grille pour la prochaine pièce
+        nextPieceGrid.actualPiece = grid.nextPiece; //on définit la pièce actuelle de cette grille comme étant la prochaine pièce du jeu
+        nextPieceGrid.nextPiece = null; //il n'y a pas de prochaine pièce (puisque c'est la grille de la prochaine pièce)
+        nextPieceGrid.AddToGrid(-(grid.width/2)+2,0,0); //On place la pièce en fonction de la position dans la grille 'nextPieceGrid' (et pas en fonction de la grille 'grid')
     }
 
-    public static async Task Round() { //il faudra trouver une autre solution pour le Delay
-
-        Console.WriteLine("I launch the game !");
-
-        // var delay = 1000;
-
-        while(!isEnd) {
-            await Task.Delay(delay);
+    public static void Round() {
 
             int offsetX = 0;
             int offsetY = 1;
@@ -57,12 +57,17 @@ public class Game {
                 Game.delay = difficultyDelay;
                 Game.score.drop = "null";
                 
-                grid.AddToGrid(0, 0, 0); //on ajoute la pièce actuel à sa dernière position (avant de mettre la prochaine pièce)
+                grid.AddToGrid(0, 0, 0); //on remet la pièce actuel à sa dernière position (avant de mettre la prochaine pièce)
                 grid.IsCompleteLine();
 
                 grid.actualPiece = grid.nextPiece;
                 grid.nextPiece = new Piece(grid.width, 2);
 
+                nextPieceGrid.RemovePiece(); //On enlève l'ancienne 'prochaine pièce'
+                nextPieceGrid.actualPiece = grid.nextPiece;
+                nextPieceGrid.AddToGrid(-(grid.width/2)+2,0,0); //décalage sur le x : on enlève la taille de la grille/2 pour remettre à 0 les coordonnées, puis on ajoute 2 pour recentrer.
+                grid.actualPiece.x = grid.width/2; //On remet le x à la position central de la grille (modifier lors de l'affichage de la prochaine pièce)
+                
                 offsetY = 0;
                 offsetX = 0;
             } else {
@@ -71,18 +76,14 @@ public class Game {
             }
 
             //ici
-            bool isPosable = grid.VerifyNewPosition(offsetX, offsetY, offsetRotation);
+            bool isPosable = grid.VerifyNewPosition(offsetX, offsetY, offsetRotation); //Vérification de si la NOUVELLE pièce est ajoutable (donc vérification de la fin du jeu).
 
             if (isPosable){
                 grid.AddToGrid(offsetX, offsetY, offsetRotation); //on ajoute la pièce à sa nouvelle position.
-
             } else {
                 isEnd = true; 
                 Console.WriteLine("Game Over");
             }
-            
-
-        }
     }
     
 }

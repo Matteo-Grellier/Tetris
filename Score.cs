@@ -1,4 +1,3 @@
-// ! not static !
 public class Score{
 
     private static int[] difficultyEasy = {2, 100,300,500,1000};

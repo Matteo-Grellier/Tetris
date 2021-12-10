@@ -1,15 +1,3 @@
-/* .back {
-    border-radius: 25px;
-    color: purple;
-    border: 2px solid black;
-    background-color: transparent;
-    top: 100px;
-    padding-top: 1px;
-    width: 100px;
-    padding-left: -100px;
-    font-size: 20px;
-} */
-
 .backButon {
     border: none;
     background-color: Transparent;
@@ -17,35 +5,7 @@
     text-shadow: 2px 0 0 #843959, 0 2px 0 #843959, 0 -2px 0 #843959, -2px 0 0 #843959, 2px 2px 0 #843959, 2px -2px 0 #843959, -2px 2px 0 #843959, -2px -2px 0 #843959;
     font-size: 24px;
     margin-bottom: 10px;
-
-    /* left: -50px; */
 }
-/* 
-.back {
-    position: relative;
-    left: 70px;
-    top: 0px;
-}
-
-.page {
-    width: 500px;
-}
-
-.grid {
-    top: 100px;
-    text-align: center;
-    position: relative;
-}
-
-.pageGame {
-    width: 500px;
-    height: 560px;
-}
-
-.container {
-    width: 50%;
-    margin: 0 auto;
-} */
 
 .container {
     display: flex;
@@ -67,11 +27,22 @@
     align-items: center;
 }
 
+.game-over-bg {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.212);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .game-over {
     position: fixed;
     z-index: 10;
 
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 
@@ -79,7 +50,8 @@
 
     font-size: 36px;
     text-align: center;
-    color: #881b2d;
+    color: #740013;
+    text-shadow: 2px 0 0 #411c2b, 0 2px 0 #411c2b, 0 -2px 0 #411c2b, -2px 0 0 #411c2b, 2px 2px 0 #411c2b, 2px -2px 0 #411c2b, -2px 2px 0 #411c2b, -2px -2px 0 #411c2b;
     background-color: #AC4A74;
     height: 200px;
     width: 400px;
@@ -87,5 +59,19 @@
 }
 
 .game-over h2 {
-    
+    margin-top: 20px;
+}
+
+.game-over button {
+    color:#ff6dac;
+    border: none;
+    background-color: Transparent;
+    text-shadow: 2px 0 0 #843959, 0 2px 0 #843959, 0 -2px 0 #843959, -2px 0 0 #843959, 2px 2px 0 #843959, 2px -2px 0 #843959, -2px 2px 0 #843959, -2px -2px 0 #843959;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.game-over button:hover {
+    color: #773250;
+    text-shadow: 2px 0 0 #411c2b, 0 2px 0 #411c2b, 0 -2px 0 #411c2b, -2px 0 0 #411c2b, 2px 2px 0 #411c2b, 2px -2px 0 #411c2b, -2px 2px 0 #411c2b, -2px -2px 0 #411c2b;
 }

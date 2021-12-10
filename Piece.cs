@@ -5,9 +5,9 @@ public class Piece {
     public static List<List<List<List<int>>>> shapes = new List<List<List<List<int>>>>(); //[type of figure][rotationVal][pour parcourir les cases (pour trouver leur x et y)][x ou y]
     public int x;
     public int y;
-    public int rotation;
-    public TypeOfPiece type; //changer la valeur dans le constructeur (aléatoire)
-    public List<List<List<int>>> shapeOfPiece; //changer la valeur dans le constructeur (aléatoire)
+    public int rotation; //index de la rotation
+    public TypeOfPiece type; //type de pièce
+    public List<List<List<int>>> shapeOfPiece; //les positions de la forme actuelle.
     
 
     public static void InitShapes() {
@@ -66,9 +66,7 @@ public class Piece {
         this.y = y;
         this.rotation = 0;
 
-        this.type = RandomTypeOfPiece(); //il faudra changer (système d'aléatoire)
-
-        // Console.WriteLine("type : " + (int)this.type);
+        this.type = RandomTypeOfPiece();
 
         this.shapeOfPiece = shapes[(int)this.type-1];
     }
@@ -76,37 +74,12 @@ public class Piece {
     public TypeOfPiece RandomTypeOfPiece() {
         Random rnd = new Random();
         int number  = rnd.Next(0, shapes.Count);
-
-
         return (TypeOfPiece)number+1;
     }
 
     public void TurnPiece(){
 
-        int offsetRotation =  0;
-
-        if (shapeOfPiece.Count == 4) {
-
-            if (this.rotation == 3 ){
-                offsetRotation = -3;
-
-            } else {
-                offsetRotation = 1;
-            }
-
-        } else if (shapeOfPiece.Count == 2) {
-
-            if (this.rotation == 1 ) {
-                offsetRotation = -1;
-
-
-            } else {
-                offsetRotation = 1;
-            }
-
-        } else {
-            offsetRotation = 0;
-        }
+        int offsetRotation =  1;
 
         Game.grid.RemovePiece(); //on enlève la pièce actuelle pour vérifier la nouvelle position (pour éviter les conflits).
 
@@ -122,9 +95,7 @@ public class Piece {
         }
     }
 
-    public void ToSide(int dirX) {
-        Console.WriteLine(dirX);
-
+    public void ToSide(int dirX) { //directionX entre 1 et -1 qui permet de se déplacer
         Game.grid.RemovePiece(); //on enlève la pièce actuelle pour vérifier la nouvelle position (pour éviter les conflits).
 
         bool isMovable = Game.grid.VerifyNewPosition(dirX, 0, 0);

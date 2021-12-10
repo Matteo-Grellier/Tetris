@@ -83,30 +83,30 @@ public class Piece {
 
     public void TurnPiece(){
 
-        int offsetRotation =  0;
+        int offsetRotation =  1;
 
-        if (shapeOfPiece.Count == 4) {
+        // if (shapeOfPiece.Count == 4) {
 
-            if (this.rotation == 3 ){
-                offsetRotation = -3;
+        //     if (this.rotation == 3 ){
+        //         offsetRotation = -3;
 
-            } else {
-                offsetRotation = 1;
-            }
+        //     } else {
+        //         offsetRotation = 1;
+        //     }
 
-        } else if (shapeOfPiece.Count == 2) {
+        // } else if (shapeOfPiece.Count == 2) {
 
-            if (this.rotation == 1 ) {
-                offsetRotation = -1;
+        //     if (this.rotation == 1 ) {
+        //         offsetRotation = -1;
 
 
-            } else {
-                offsetRotation = 1;
-            }
+        //     } else {
+        //         offsetRotation = 1;
+        //     }
 
-        } else {
-            offsetRotation = 0;
-        }
+        // } else {
+        //     offsetRotation = 0;
+        // }
 
         Game.grid.RemovePiece(); //on enlève la pièce actuelle pour vérifier la nouvelle position (pour éviter les conflits).
 

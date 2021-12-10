@@ -6,8 +6,6 @@ class Menu {
     public static void Play() {
         Game.Init();
 
-        // Piece.InitShapes();
-
         Game.Round();
     }
 

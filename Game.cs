@@ -78,16 +78,9 @@ public class Game {
                 
                 offsetY = 0;
                 offsetX = 0;
-
-                // Console.WriteLine("Fin de la pièce, début de la nouvelle");
             } else {
                 offsetY = 1;
                 offsetX = 0;
-
-
-                // Console.WriteLine("nouvelle position pour la pièce !");
-                // Console.WriteLine("size : " + grid.pieces.Count);
-                // Console.WriteLine("x and y : " + grid.actualPiece.x + " " + grid.actualPiece.y);
             }
 
             //ici
@@ -97,8 +90,7 @@ public class Game {
                 grid.AddToGrid(offsetX, offsetY, offsetRotation); //on ajoute la pièce à sa nouvelle position.
             } else {
                 isEnd = true; 
-                Console.WriteLine("HAHA NOOB YOU FAILLLLLLED");
-
+                Console.WriteLine("Game Over");
             }
     }
     

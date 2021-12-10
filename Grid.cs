@@ -90,7 +90,6 @@ public class Grid {
 
             pieces[yOriginalBox][xOriginalBox] = (int)TypeOfPiece.EMPTY;
 
-            // Console.WriteLine("DELETE original : " + xOriginalBox + " " + yOriginalBox);
 
         }
     }

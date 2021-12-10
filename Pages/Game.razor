@@ -1,0 +1,134 @@
+@page "/game"
+@inject NavigationManager NavigationManager
+@using System.Threading;
+
+@switch(SourceCode.Game.choosenDifficulty)
+{
+    case 1:
+    <audio id="musicplayer" autoplay loop>
+        <source src="Sound\testriste-easy.mp3">
+    </audio>
+    break;
+
+    case 2:
+    <audio id="musicplayer" autoplay loop>
+        <source src="Sound\testriste-moyen.mp3">
+    </audio>
+    break;
+
+    case 3:
+    <audio id="musicplayer" autoplay loop>
+        <source src="Sound\testriste-extreme.mp3">
+    </audio>
+    break;
+
+    case 4:
+    <audio id="musicplayer" autoplay loop>
+        <source src="Sound\testriste-purpl.mp3">
+    </audio>
+    break;
+}
+
+
+@if(SourceCode.Game.isEnd) {
+    <div class="game-over-bg">
+        <div class="game-over">
+            <h2>Game over !</h2>
+            <div class="back">
+                <button class="backButon" @onclick="NavigateToHome"> &lt Back </button>
+            </div>
+            <div class="retry">
+                <button class="retryButton" @onclick="Retry"> Retry </button>
+            </div>
+        </div>
+    </div>
+}
+
+<div class="pageGame">
+    <div class="back">
+            <button class="backButon" @onclick="NavigateToHome"> &lt Back </button>
+    </div>
+    <div class="container">
+        <div class="element-grid-score">
+            <table>
+                <tbody>
+                    @foreach(var line in SourceCode.Game.grid.pieces) {
+                        <tr>
+                            @foreach(var c in line) {
+                                <td id="c-@c">
+                                </td>
+                            }
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <div class="right-element">
+                <div class="next-piece">
+                    <h2>NEXT</h2>
+                    <table class="next-piece-grid">
+                        <tbody>
+                        @foreach(var line in SourceCode.Game.nextPieceGrid.pieces) {
+                            <tr>
+                                @foreach(var c in line) {
+                                    <td id="c-@c">
+                                    </td>
+                                }
+                            </tr>
+                        }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="score">
+                    <h2>SCORE</h2>
+                    <h2>@SourceCode.Game.score.score</h2>
+                </div>
+            </div>            
+        </div>
+        <div class="button-game">
+            <button class="btn-dir to-left" @onclick="() => SourceCode.Game.grid.actualPiece.ToSide(-1)">
+                <img src="images/button-left-bigger.png">
+            </button>
+            <button class="btn-dir to-right" @onclick="() => SourceCode.Game.grid.actualPiece.ToSide(1)">
+                <img src="images/button-right-bigger.png">
+            </button>
+            <button class="btn-dir to-soft-drop" @onmousedown="() => SourceCode.Game.grid.actualPiece.Drop(100)" @onmouseup="() => SourceCode.Game.grid.actualPiece.Drop(SourceCode.Game.difficultyDelay)">
+                <img src="images/button-right-bigger.png" style="transform: rotate(90deg);">
+            </button>
+            <button class="btn-dir to-hard-drop" @onclick="() => SourceCode.Game.grid.actualPiece.Drop(0)">
+                <img src="images/button-hard-drop-bigger.png">
+            </button>
+            <button class="btn-dir btn-turn" @onclick="() => SourceCode.Game.grid.actualPiece.TurnPiece()">
+                <img class="btn-turn" src="images/button-turn-clockwise-bigger.png">
+            </button>
+        </div>
+            
+    </div>
+</div>
+
+@code {
+    //Revenir à la page Home (en appuyant sur 'Back')
+    private void NavigateToHome() { 
+        SourceCode.Game.isEnd = true;
+        NavigationManager.NavigateTo("/");       
+    }
+
+    //Fonction appelé automatiquement au chargement de la page (fonction lié au C# et override). Permet de lancer la boucle de jeu.
+    protected override async Task OnInitializedAsync()
+    {
+        while(!SourceCode.Game.isEnd) {
+            await Task.Delay(SourceCode.Game.delay);
+
+            SourceCode.Game.Round();
+
+            StateHasChanged();
+        }
+    }
+
+    //Fonction appelée lors de l'appui du bouton 'Retry' dans le menu 'Game Over' si le joueur décide de recommencer
+    private void Retry() {
+        SourceCode.Piece.shapes = new List<List<List<List<int>>>>();
+        SourceCode.Game.Init();
+        OnInitializedAsync();
+    }
+}
+

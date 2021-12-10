@@ -1,0 +1,108 @@
+@page "/option"
+@namespace SourceCode
+@using Microsoft.Extensions.Logging
+@inject NavigationManager NavigationManager
+@inject ILogger<Option> Logger
+
+
+<div class="optionPage">
+    <div class="back">
+        <button class="backButon" @onclick="NavigateToHome">Back</button>
+    </div>
+    <div>
+        Options
+    </div>
+    <div class="dificultyOption">
+        Dificulties :
+    </div>
+    <div class="dificulties">
+        <button value="button1" class="facile" @onclick="@(()=>changeDelay(@button1))">- Facile</button>
+        <div class="moyenDiv">
+        <button value="button2" class="moyen" @onclick="@(()=>changeDelay(@button2))" >- Moyen</button>
+        </div>
+        <div class="extremeDiv">
+        <button value="button3" class="extreme" @onclick="@(()=>changeDelay(@button3))">- Extrême</button>
+        </div>
+        <div class="purpleDiv">
+        <button value="button4" class="purple" @onclick="@(()=>changeDelay(@button4))">- Purple</button>
+        </div>
+    </div>
+
+    <div class="Game-Grid">
+        Game Grid :
+    </div>
+
+    <div class="WH">
+        <EditForm Model="@game" OnValidSubmit="@HandleValidSubmit">
+            <DataAnnotationsValidator />
+            <ValidationSummary />
+            
+            <div class="widthInput">
+            <label class="fname">Width</label>
+            <input type="range"
+                min="0"
+                max="30"
+                step="1"
+                @bind-value="Game.width"
+                @bind-value:event="oninput"/>
+            </div>
+            <div class="heightInput">
+            <label class="fname">Height</label>
+            <input type="range"
+                min="0"
+                max="30"
+                step="1"
+                @bind-value="Game.height"
+                @bind-value:event="oninput"/>
+            </div>
+            <div class="submitButton">
+            </div>
+            <div class="showLength">@Game.width</div>
+            <div class="showHeight">@Game.height</div>
+        </EditForm>
+    </div>
+</div>
+
+@code {
+    private Game game = new();
+    int eachButton = 0;
+    private int button1 = 1;
+    private int button2 = 2;
+    private int button3 = 3;
+    private int button4 = 4;
+
+
+
+    private void NavigateToHome() { NavigationManager.NavigateTo("/"); } 
+
+    private void HandleValidSubmit()
+    {
+        Logger.LogInformation("HandleValidSubmit called");
+    }
+
+    //Changement de la vitesse ainsi que de la difficulté en fonction du choix de l'utilisateur
+    public void changeDelay(int buttonID){
+        switch(buttonID)
+        {
+            case 1:
+                Game.choosenDifficulty = 1;
+                Game.difficultyDelay = 1500;
+                break;
+            case 2:
+                Game.choosenDifficulty = 2;
+                Game.difficultyDelay = 1000;
+                break;
+            case 3:
+                Game.choosenDifficulty = 3;
+                Game.difficultyDelay = 200;
+                break;
+            case 4:
+                Game.choosenDifficulty = 4;
+                Game.difficultyDelay = 100;
+                break;
+            default:
+                break;
+        }
+        
+    }
+}

@@ -1,0 +1,19 @@
+.menu button {
+    transition: all .5s ease-in-out;
+    background: none;
+    border: none;
+    color: #AC4A74;
+    text-shadow: 2px 0 0 #843959, 0 2px 0 #843959, 0 -2px 0 #843959, -2px 0 0 #843959, 2px 2px 0 #843959, 2px -2px 0 #843959, -2px 2px 0 #843959, -2px -2px 0 #843959;
+    font-size: 24px;
+    margin-top: 10px;
+}
+
+.menu button:hover {
+    color: #773250;
+    text-shadow: 2px 0 0 #411c2b, 0 2px 0 #411c2b, 0 -2px 0 #411c2b, -2px 0 0 #411c2b, 2px 2px 0 #411c2b, 2px -2px 0 #411c2b, -2px 2px 0 #411c2b, -2px -2px 0 #411c2b;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+}

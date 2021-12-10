@@ -1,0 +1,30 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow: hidden;
+}
+
+.page {
+    font-family: 'Press Start 2P';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #B982BA;
+    height: 100vh; 
+}
+
+.content-tetris {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 400px;
+    height: 600px;
+    background-color: #FFA1C9;
+    border-radius: 20px;
+}

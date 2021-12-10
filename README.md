@@ -15,6 +15,14 @@ Le jeu a été créé par la team **Purpl'Studio**:punch: dans le cadre d'un **p
 L'équipe est composé de : **Mathéo LEGER**, **Mattéo GRELLIER**, et **Louis BROCHARD**.  
 Ce jeu est notre version du Tetris (lien du Wikipédia [ici](https://fr.wikipedia.org/wiki/Tetris)).  
 
+### Documents
+
+Voici quelques éléments en plus pour comprendre le projet :
+
+- le [Figma](https://www.figma.com/file/YTk8NeWluuWcdg31YzddYX/TetrisApp?node-id=0%3A1) du projet. (Donne une idée globale du style).
+- le **Diagramme de classe** (UML) :
+![diagram](./Tetris.drawio.png)
+
 
 ## :joystick: Lancer le jeu
 Pour lancer le jeu il faut :

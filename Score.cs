@@ -1,11 +1,10 @@
-// ! not static !
 public class Score{
 
     private static int[] difficultyEasy = {2, 100,300,500,1000};
-    private static int[] difficultyNormal = {4, 250,750,1250,2500};
-    private static int[] difficultyHard = {6, 500,1500,2500,5000};
-    private static int[] difficultyExtreme = {8, 1000,3000,5000,10000};
-    private static int[] difficultyPurpl = {4, 250,750,1250,2500};
+    private static int[] difficultyMedium = {4, 250,750,1250,2500};
+    private static int[] difficultyExtreme = {6, 500,1500,2500,5000};
+    private static int[] difficultyPurpl = {8, 1000,3000,5000,10000};
+
 
     //en private !
     private static int[] selectedDifficulty;
@@ -20,8 +19,6 @@ public class Score{
     public int score;
 
     public Score(int difficulty){
-
-        // int[] selectedDifficulty;
 
         score = 0;
 
@@ -38,15 +35,12 @@ public class Score{
                 selectedDifficulty = difficultyEasy;
                 break;
             case 2:
-                selectedDifficulty = difficultyNormal;
+                selectedDifficulty = difficultyMedium;
                 break;
             case 3:
-                selectedDifficulty = difficultyHard;
-                break;
-            case 4:
                 selectedDifficulty = difficultyExtreme;
                 break;
-            case 5:
+            case 4:
                 selectedDifficulty = difficultyPurpl;
                 break;
             default:
@@ -58,10 +52,6 @@ public class Score{
     //to launch when lines are destroyed, augment score depending on the difficulty and number of lines destroyed
     public void LinesPoints(int numberOfLines){
         score += selectedDifficulty[numberOfLines];
-        Console.WriteLine(":::::::::::::::::::::::::::::::::::::::::");
-        Console.WriteLine("(lines) numberOfLines = " + numberOfLines);
-        Console.WriteLine("(lines) score added = " + selectedDifficulty[numberOfLines]);
-        Console.WriteLine("(lines) score = " + this.score);
     }
 
     public void Begin(int yvalue){
@@ -82,21 +72,12 @@ public class Score{
     public void SoftDrop(int endYvalue){
         int dif = endYvalue - this.begin;
         this.score += 2 * dif;
-        Console.WriteLine("******************************************");
-        Console.WriteLine("(soft) dif = " + dif);
-        Console.WriteLine("(soft) score added = " + 2 * dif);
-        Console.WriteLine("(soft) score = " + this.score);
-
     }
 
     //to launch when harddrop
     public void HardDrop(int endYvalue){
         int dif = endYvalue - this.begin;
         this.score += selectedDifficulty[0] * dif;
-        Console.WriteLine("==========================================");
-        Console.WriteLine("(hard) dif = " + dif);
-        Console.WriteLine("(soft) score added = " + selectedDifficulty[0] * dif);
-        Console.WriteLine("(hard) score = " + score);
     }
 
 }

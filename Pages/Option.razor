@@ -78,9 +78,9 @@
     private void HandleValidSubmit()
     {
         Logger.LogInformation("HandleValidSubmit called");
-        // Process the valid form
     }
 
+    //Changement de la vitesse ainsi que de la difficulté en fonction du choix de l'utilisateur
     public void changeDelay(int buttonID){
         switch(buttonID)
         {
@@ -97,7 +97,7 @@
                 Game.difficultyDelay = 200;
                 break;
             case 4:
-                Game.choosenDifficulty = 5;
+                Game.choosenDifficulty = 4;
                 Game.difficultyDelay = 100;
                 break;
             default:
